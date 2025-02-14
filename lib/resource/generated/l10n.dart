@@ -279,6 +279,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Login to your\nAccount`
+  String get login_to_ur_account {
+    return Intl.message(
+      'Login to your\nAccount',
+      name: 'login_to_ur_account',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

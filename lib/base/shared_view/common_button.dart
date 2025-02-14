@@ -51,13 +51,16 @@ class CommonButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final child = DecoratedBox(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), boxShadow: [
-        BoxShadow(
-          offset: const Offset(4, 8),
-          blurRadius: 24,
-          color: AppColors.current.primary500.withOpacity(.25),
-        ),
-      ]),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(100),
+        boxShadow: !enable ? null : [
+          BoxShadow(
+            offset: const Offset(4, 8),
+            blurRadius: 24,
+            color: AppColors.current.primary500.withOpacity(.25),
+          ),
+        ],
+      ),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
@@ -80,12 +83,13 @@ class CommonButton extends StatelessWidget {
   }
 
   Color _backgroundColor() {
-    if (!enable) return AppColors.current.disable;
+    if (!enable) return AppColors.current.disableButton;
     return backgroundColor ?? AppColors.current.primary500;
   }
 
   Color _getTitleColor() {
-    if (enable) return AppColors.current.otherWhite;
-    return AppColors.current.primary500;
+    return AppColors.current.otherWhite;
+    // if (enable) return AppColors.current.otherWhite;
+    // return AppColors.current.primary500;
   }
 }

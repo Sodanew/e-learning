@@ -40,6 +40,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "greeting": MessageLookupByLibrary.simpleMessage("Hello"),
         "lets_you_in": MessageLookupByLibrary.simpleMessage("Let\'s you in"),
+        "login_to_ur_account":
+            MessageLookupByLibrary.simpleMessage("Login to your\nAccount"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "onboarding_1_title": MessageLookupByLibrary.simpleMessage(
             "We provide the best learning courses & great mentors!"),

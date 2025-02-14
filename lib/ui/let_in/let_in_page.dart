@@ -43,10 +43,12 @@ class LetInPage extends StatelessWidget {
               const Gap(30),
               const SocialAuthProviderPage(),
               const Gap(Dimens.paddingVerticalLarge),
-              const ViaWidget(),
+              ViaWidget(title: S.current.or.toLowerCase()),
               const Gap(Dimens.paddingVerticalLarge),
               CommonButton(
-                onPressed: () {},
+                onPressed: () {
+                  AutoRouter.of(context).push(const LoginRoute());
+                },
                 title: S.current.sign_in_with_password,
                 fullWidth: true,
               ),

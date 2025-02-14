@@ -20,6 +20,7 @@ import '../domain/use_case/auth/logout_use_case.dart' as _i92;
 import '../domain/use_case/config/load_app_config_use_case.dart' as _i839;
 import '../navigation/app_navigator_impl.dart' as _i285;
 import '../navigation/router.dart' as _i502;
+import '../ui/login/bloc/login_bloc.dart' as _i919;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -34,6 +35,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i839.LoadAppConfigUseCase>(() => _i839.LoadAppConfigUseCase());
     gh.factory<_i92.LogoutUseCase>(() => _i92.LogoutUseCase());
+    gh.factory<_i919.LoginBloc>(() => _i919.LoginBloc());
     gh.singleton<_i334.AppBloc>(() => _i334.AppBloc());
     gh.lazySingleton<_i502.AppRouter>(() => _i502.AppRouter());
     gh.lazySingleton<_i762.AuthService>(
