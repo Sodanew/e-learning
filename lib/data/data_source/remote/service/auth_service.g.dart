@@ -19,20 +19,20 @@ class _AuthService implements AuthService {
   String? baseUrl;
 
   @override
-  Future<ApiResponse<dynamic>> login() async {
+  Future<ApiResponse<LoginResponseDto>> login(LoginRequest req) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = req;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ApiResponse<dynamic>>(Options(
+        _setStreamType<ApiResponse<LoginResponseDto>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/auth/login',
+              '/login',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -41,9 +41,9 @@ class _AuthService implements AuthService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ApiResponse<dynamic>.fromJson(
+    final value = ApiResponse<LoginResponseDto>.fromJson(
       _result.data!,
-      (json) => json as dynamic,
+      (json) => LoginResponseDto.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

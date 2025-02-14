@@ -13,13 +13,13 @@ class AppEnvironment extends EnvironmentConfigurable {
   });
 
   static AppEnvironment dev = AppEnvironment(
-    apiBaseUrl: 'facebook.com',
-    brandName: 'Facebook',
+    apiBaseUrl: 'https://d5dd9cdf-7b43-476a-96fc-c95e405bc449.mock.pstmn.io/api',
+    brandName: 'E-Learning',
   );
 
   static AppEnvironment prod = AppEnvironment(
-    apiBaseUrl: 'google.com',
-    brandName: 'Google',
+    apiBaseUrl: 'https://d5dd9cdf-7b43-476a-96fc-c95e405bc449.mock.pstmn.io/api',
+    brandName: 'E-Learning',
   );
 
   @override

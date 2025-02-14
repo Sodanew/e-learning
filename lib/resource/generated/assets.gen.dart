@@ -124,6 +124,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Document.svg
   SvgGenImage get document => const SvgGenImage('assets/icons/Document.svg');
 
+  /// File path: assets/icons/Hide.svg
+  SvgGenImage get hide => const SvgGenImage('assets/icons/Hide.svg');
+
   /// File path: assets/icons/Home-Enable.svg
   SvgGenImage get homeEnable =>
       const SvgGenImage('assets/icons/Home-Enable.svg');
@@ -152,6 +155,9 @@ class $AssetsIconsGen {
   SvgGenImage get radioUnselected =>
       const SvgGenImage('assets/icons/Radio-Unselected.svg');
 
+  /// File path: assets/icons/Show.svg
+  SvgGenImage get show => const SvgGenImage('assets/icons/Show.svg');
+
   /// File path: assets/icons/Toggle-Disabled.svg
   SvgGenImage get toggleDisabled =>
       const SvgGenImage('assets/icons/Toggle-Disabled.svg');
@@ -179,6 +185,7 @@ class $AssetsIconsGen {
         checkboxUnchecked,
         documentEnable,
         document,
+        hide,
         homeEnable,
         home,
         lock,
@@ -187,6 +194,7 @@ class $AssetsIconsGen {
         profile,
         radioSelected,
         radioUnselected,
+        show,
         toggleDisabled,
         toggleEnable,
         chevronLeft,
