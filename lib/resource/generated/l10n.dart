@@ -109,6 +109,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Let's you in`
+  String get lets_you_in {
+    return Intl.message(
+      'Let\'s you in',
+      name: 'lets_you_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google`
+  String get google {
+    return Intl.message(
+      'Google',
+      name: 'google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook`
+  String get facebook {
+    return Intl.message(
+      'Facebook',
+      name: 'facebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apple`
+  String get apple {
+    return Intl.message(
+      'Apple',
+      name: 'apple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with {name}`
+  String continue_with(Object name) {
+    return Intl.message(
+      'Continue with $name',
+      name: 'continue_with',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Or`
+  String get or {
+    return Intl.message(
+      'Or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with password`
+  String get sign_in_with_password {
+    return Intl.message(
+      'Sign in with password',
+      name: 'sign_in_with_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dont_have_an_account {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dont_have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get sign_up {
+    return Intl.message(
+      'Sign up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in`
+  String get sign_in {
+    return Intl.message(
+      'Sign in',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get already_have_an_account {
+    return Intl.message(
+      'Already have an account?',
+      name: 'already_have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or continue with`
+  String get or_continue_with {
+    return Intl.message(
+      'or continue with',
+      name: 'or_continue_with',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember me`
+  String get remember_me {
+    return Intl.message(
+      'Remember me',
+      name: 'remember_me',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot the password?`
+  String get forgot_the_password {
+    return Intl.message(
+      'Forgot the password?',
+      name: 'forgot_the_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create your\nAccount`
+  String get create_ur_account {
+    return Intl.message(
+      'Create your\nAccount',
+      name: 'create_ur_account',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

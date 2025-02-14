@@ -15,8 +15,8 @@ class DotWidget extends StatelessWidget {
         3,
         (i) => AnimatedContainer(
           duration: const Duration(milliseconds: 200),
-          width: i == index ? 32 : 12,
-          height: 12,
+          width: i == index ? 32 : 8,
+          height: 8,
           margin: const EdgeInsets.only(right: 10),
           decoration: BoxDecoration(
             color: i == index ? AppColors.current.primary500 : AppColors.current.greyscale300,

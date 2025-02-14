@@ -93,6 +93,73 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/Arrow-Left.svg
+  SvgGenImage get arrowLeft => const SvgGenImage('assets/icons/Arrow-Left.svg');
+
+  /// File path: assets/icons/Buy-Enable.svg
+  SvgGenImage get buyEnable => const SvgGenImage('assets/icons/Buy-Enable.svg');
+
+  /// File path: assets/icons/Buy.svg
+  SvgGenImage get buy => const SvgGenImage('assets/icons/Buy.svg');
+
+  /// File path: assets/icons/Chat-Enable.svg
+  SvgGenImage get chatEnable =>
+      const SvgGenImage('assets/icons/Chat-Enable.svg');
+
+  /// File path: assets/icons/Chat.svg
+  SvgGenImage get chat => const SvgGenImage('assets/icons/Chat.svg');
+
+  /// File path: assets/icons/Checkbox-Checked.svg
+  SvgGenImage get checkboxChecked =>
+      const SvgGenImage('assets/icons/Checkbox-Checked.svg');
+
+  /// File path: assets/icons/Checkbox-Unchecked.svg
+  SvgGenImage get checkboxUnchecked =>
+      const SvgGenImage('assets/icons/Checkbox-Unchecked.svg');
+
+  /// File path: assets/icons/Document-Enable.svg
+  SvgGenImage get documentEnable =>
+      const SvgGenImage('assets/icons/Document-Enable.svg');
+
+  /// File path: assets/icons/Document.svg
+  SvgGenImage get document => const SvgGenImage('assets/icons/Document.svg');
+
+  /// File path: assets/icons/Home-Enable.svg
+  SvgGenImage get homeEnable =>
+      const SvgGenImage('assets/icons/Home-Enable.svg');
+
+  /// File path: assets/icons/Home.svg
+  SvgGenImage get home => const SvgGenImage('assets/icons/Home.svg');
+
+  /// File path: assets/icons/Lock.svg
+  SvgGenImage get lock => const SvgGenImage('assets/icons/Lock.svg');
+
+  /// File path: assets/icons/Message.svg
+  SvgGenImage get message => const SvgGenImage('assets/icons/Message.svg');
+
+  /// File path: assets/icons/Profile-Enable.svg
+  SvgGenImage get profileEnable =>
+      const SvgGenImage('assets/icons/Profile-Enable.svg');
+
+  /// File path: assets/icons/Profile.svg
+  SvgGenImage get profile => const SvgGenImage('assets/icons/Profile.svg');
+
+  /// File path: assets/icons/Radio-Selected.svg
+  SvgGenImage get radioSelected =>
+      const SvgGenImage('assets/icons/Radio-Selected.svg');
+
+  /// File path: assets/icons/Radio-Unselected.svg
+  SvgGenImage get radioUnselected =>
+      const SvgGenImage('assets/icons/Radio-Unselected.svg');
+
+  /// File path: assets/icons/Toggle-Disabled.svg
+  SvgGenImage get toggleDisabled =>
+      const SvgGenImage('assets/icons/Toggle-Disabled.svg');
+
+  /// File path: assets/icons/Toggle-Enable.svg
+  SvgGenImage get toggleEnable =>
+      const SvgGenImage('assets/icons/Toggle-Enable.svg');
+
   /// File path: assets/icons/chevron-left.svg
   SvgGenImage get chevronLeft =>
       const SvgGenImage('assets/icons/chevron-left.svg');
@@ -102,7 +169,29 @@ class $AssetsIconsGen {
       const SvgGenImage('assets/icons/chevron-right.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [chevronLeft, chevronRight];
+  List<SvgGenImage> get values => [
+        arrowLeft,
+        buyEnable,
+        buy,
+        chatEnable,
+        chat,
+        checkboxChecked,
+        checkboxUnchecked,
+        documentEnable,
+        document,
+        homeEnable,
+        home,
+        lock,
+        message,
+        profileEnable,
+        profile,
+        radioSelected,
+        radioUnselected,
+        toggleDisabled,
+        toggleEnable,
+        chevronLeft,
+        chevronRight
+      ];
 }
 
 class $AssetsImagesGen {

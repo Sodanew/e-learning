@@ -5,5 +5,7 @@ abstract final class Dimens {
   
   static const paddingHorizontalLarge = 24.0;
 
-  static const paddingVertical = 20.0;
+  static const paddingVertical = 16.0;
+
+  static const paddingVerticalLarge = 24.0;
 }

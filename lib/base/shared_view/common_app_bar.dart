@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../resource/generated/assets.gen.dart';
+import '../constants/ui/app_colors.dart';
 import '../constants/ui/app_text_styles.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -80,7 +81,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       bottom: bottom,
       shadowColor: shadowColor,
       shape: shape,
-      backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor ?? AppColors.current.otherWhite,
       foregroundColor: foregroundColor,
       iconTheme: iconTheme,
       actionsIconTheme: actionsIconTheme,
@@ -99,7 +100,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onLeadingPressed ?? () => _onPop(context),
         icon: Container(
           padding: const EdgeInsets.only(left: 16),
-          child: LeadingIcon.close == leadingIcon ? const Icon(Icons.close) : Assets.icons.chevronLeft.svg(),
+          child: LeadingIcon.close == leadingIcon ? const Icon(Icons.close) : Assets.icons.arrowLeft.svg(),
         ),
       ),
       centerTitle: centerTitle,

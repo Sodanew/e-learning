@@ -31,5 +31,34 @@ abstract final class AppTextStyles {
   static TextStyle bodyLargeMedium =
       _baseTextStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 16, color: AppColors.current.greyscale900);
   static TextStyle bodyLargeRegular =
-      _baseTextStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 18, color: AppColors.current.greyscale900);
+      _baseTextStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 16, color: AppColors.current.greyscale900);
+
+
+  static TextStyle bodyMediumBold =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 14, color: AppColors.current.greyscale900);
+  static TextStyle bodyMediumSemiBold =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w600, fontSize: 14, color: AppColors.current.greyscale900);
+  static TextStyle bodyMedium =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 14, color: AppColors.current.greyscale900);
+  static TextStyle bodyMediumRegular =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 14, color: AppColors.current.greyscale900);
+
+
+  static TextStyle bodySmallBold =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 12, color: AppColors.current.greyscale900);
+  static TextStyle bodySmallSemiBold =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w600, fontSize: 12, color: AppColors.current.greyscale900);
+  static TextStyle bodySmallMedium =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 12, color: AppColors.current.greyscale900);
+  static TextStyle bodySmallRegular =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 12, color: AppColors.current.greyscale900);
+
+  static TextStyle bodyXSmallBold =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 10, color: AppColors.current.greyscale900);
+  static TextStyle bodyXSmallSemiBold =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w600, fontSize: 10, color: AppColors.current.greyscale900);
+  static TextStyle bodyXSmallMedium =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 10, color: AppColors.current.greyscale900);
+  static TextStyle bodyXSmallRegular =
+  _baseTextStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 10, color: AppColors.current.greyscale900);
 }

@@ -7,10 +7,11 @@ enum CommonButtonSize { small, medium, large }
 class CommonButton extends StatelessWidget {
   const CommonButton({
     super.key,
-    required this.title,
     required this.onPressed,
+    required this.title,
     this.size = CommonButtonSize.medium,
     this.enable = true,
+    this.fullWidth = false,
     this.backgroundColor,
   });
 
@@ -18,6 +19,7 @@ class CommonButton extends StatelessWidget {
   final VoidCallback onPressed;
   final CommonButtonSize size;
   final bool enable;
+  final bool fullWidth;
   final Color? backgroundColor;
 
   // factory CommonButton.small({
@@ -48,7 +50,7 @@ class CommonButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    final child = DecoratedBox(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), boxShadow: [
         BoxShadow(
           offset: const Offset(4, 8),
@@ -74,6 +76,7 @@ class CommonButton extends StatelessWidget {
         ),
       ),
     );
+    return fullWidth ? ConstrainedBox(constraints: BoxConstraints(minWidth: double.infinity), child: child) : child;
   }
 
   Color _backgroundColor() {
