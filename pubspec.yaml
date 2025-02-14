@@ -159,21 +159,41 @@ flutter:
   #         weight: 700
 
   fonts:
-    - family: GoogleSans
+    - family: Urbanist
       fonts:
-        - asset: assets/fonts/GoogleSans-Bold.ttf
+        - asset: assets/fonts/Urbanist-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Urbanist-ExtraBoldItalic.ttf
+          style: italic
+          weight: 800
+        - asset: assets/fonts/Urbanist-Bold.ttf
           weight: 700
-        - asset: assets/fonts/GoogleSans-BoldItalic.ttf
+        - asset: assets/fonts/Urbanist-BoldItalic.ttf
           style: italic
           weight: 700
-        - asset: assets/fonts/GoogleSans-Medium.ttf
+        - asset: assets/fonts/Urbanist-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Urbanist-SemiBoldItalic.ttf
+          style: italic
+          weight: 600
+        - asset: assets/fonts/Urbanist-Medium.ttf
           weight: 500
-        - asset: assets/fonts/GoogleSans-MediumItalic.ttf
+        - asset: assets/fonts/Urbanist-MediumItalic.ttf
           style: italic
           weight: 500
-        - asset: assets/fonts/GoogleSans-Regular.ttf
+        - asset: assets/fonts/Urbanist-Regular.ttf
           weight: 400
-        - asset: assets/fonts/GoogleSans-Italic.ttf
+        - asset: assets/fonts/Urbanist-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Urbanist-ThinItalic.ttf
+          style: italic
+          weight: 100
+        - asset: assets/fonts/Urbanist-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Urbanist-LightItalic.ttf
+          style: italic
+          weight: 100
+        - asset: assets/fonts/Urbanist-Italic.ttf
           style: italic
 
 flutter_intl:

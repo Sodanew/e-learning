@@ -26,15 +26,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   final items = <OnboardingEntity>[
     OnboardingEntity(
-        path: Assets.images.image.path,
+        path: Assets.images.frame.path,
         title: [S.current.onboarding_1_title, S.current.onboarding_1_title_2],
         content: S.current.onboarding_1_description),
     OnboardingEntity(
-        path: Assets.images.image1.path,
+        path: Assets.images.frame1.path,
         title: [S.current.onboarding_2_title, S.current.onboarding_2_title_2],
         content: S.current.onboarding_2_description),
     OnboardingEntity(
-        path: Assets.images.image2.path,
+        path: Assets.images.frame2.path,
         title: [S.current.onboarding_3_title, S.current.onboarding_3_title_2],
         content: S.current.onboarding_3_description),
   ];

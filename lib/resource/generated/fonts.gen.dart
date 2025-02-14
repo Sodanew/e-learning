@@ -10,6 +10,6 @@
 class FontFamily {
   FontFamily._();
 
-  /// Font family: GoogleSans
-  static const String googleSans = 'GoogleSans';
+  /// Font family: Urbanist
+  static const String urbanist = 'Urbanist';
 }

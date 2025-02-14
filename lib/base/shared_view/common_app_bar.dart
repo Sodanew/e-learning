@@ -107,7 +107,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         onTap: onTitlePressed,
         behavior: HitTestBehavior.translucent,
         child: titleType == AppBarTitle.text
-            ? Text(text ?? '', style: titleTextStyle ?? AppTextStyles.textBody16Medium)
+            ? Text(text ?? '', style: titleTextStyle ?? AppTextStyles.h4Bold)
             : titleType == AppBarTitle.logo
             ? Assets.icons.chevronLeft.svg()
             : (titleType == AppBarTitle.widget ? text : null),

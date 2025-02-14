@@ -27,33 +27,66 @@ class $AssetsAnimationsGen {
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
-  /// File path: assets/fonts/GoogleSans-Bold.ttf
-  String get googleSansBold => 'assets/fonts/GoogleSans-Bold.ttf';
+  /// File path: assets/fonts/Urbanist-Bold.ttf
+  String get urbanistBold => 'assets/fonts/Urbanist-Bold.ttf';
 
-  /// File path: assets/fonts/GoogleSans-BoldItalic.ttf
-  String get googleSansBoldItalic => 'assets/fonts/GoogleSans-BoldItalic.ttf';
+  /// File path: assets/fonts/Urbanist-BoldItalic.ttf
+  String get urbanistBoldItalic => 'assets/fonts/Urbanist-BoldItalic.ttf';
 
-  /// File path: assets/fonts/GoogleSans-Italic.ttf
-  String get googleSansItalic => 'assets/fonts/GoogleSans-Italic.ttf';
+  /// File path: assets/fonts/Urbanist-ExtraBold.ttf
+  String get urbanistExtraBold => 'assets/fonts/Urbanist-ExtraBold.ttf';
 
-  /// File path: assets/fonts/GoogleSans-Medium.ttf
-  String get googleSansMedium => 'assets/fonts/GoogleSans-Medium.ttf';
+  /// File path: assets/fonts/Urbanist-ExtraBoldItalic.ttf
+  String get urbanistExtraBoldItalic =>
+      'assets/fonts/Urbanist-ExtraBoldItalic.ttf';
 
-  /// File path: assets/fonts/GoogleSans-MediumItalic.ttf
-  String get googleSansMediumItalic =>
-      'assets/fonts/GoogleSans-MediumItalic.ttf';
+  /// File path: assets/fonts/Urbanist-Italic.ttf
+  String get urbanistItalic => 'assets/fonts/Urbanist-Italic.ttf';
 
-  /// File path: assets/fonts/GoogleSans-Regular.ttf
-  String get googleSansRegular => 'assets/fonts/GoogleSans-Regular.ttf';
+  /// File path: assets/fonts/Urbanist-Light.ttf
+  String get urbanistLight => 'assets/fonts/Urbanist-Light.ttf';
+
+  /// File path: assets/fonts/Urbanist-LightItalic.ttf
+  String get urbanistLightItalic => 'assets/fonts/Urbanist-LightItalic.ttf';
+
+  /// File path: assets/fonts/Urbanist-Medium.ttf
+  String get urbanistMedium => 'assets/fonts/Urbanist-Medium.ttf';
+
+  /// File path: assets/fonts/Urbanist-MediumItalic.ttf
+  String get urbanistMediumItalic => 'assets/fonts/Urbanist-MediumItalic.ttf';
+
+  /// File path: assets/fonts/Urbanist-Regular.ttf
+  String get urbanistRegular => 'assets/fonts/Urbanist-Regular.ttf';
+
+  /// File path: assets/fonts/Urbanist-SemiBold.ttf
+  String get urbanistSemiBold => 'assets/fonts/Urbanist-SemiBold.ttf';
+
+  /// File path: assets/fonts/Urbanist-SemiBoldItalic.ttf
+  String get urbanistSemiBoldItalic =>
+      'assets/fonts/Urbanist-SemiBoldItalic.ttf';
+
+  /// File path: assets/fonts/Urbanist-Thin.ttf
+  String get urbanistThin => 'assets/fonts/Urbanist-Thin.ttf';
+
+  /// File path: assets/fonts/Urbanist-ThinItalic.ttf
+  String get urbanistThinItalic => 'assets/fonts/Urbanist-ThinItalic.ttf';
 
   /// List of all assets
   List<String> get values => [
-        googleSansBold,
-        googleSansBoldItalic,
-        googleSansItalic,
-        googleSansMedium,
-        googleSansMediumItalic,
-        googleSansRegular
+        urbanistBold,
+        urbanistBoldItalic,
+        urbanistExtraBold,
+        urbanistExtraBoldItalic,
+        urbanistItalic,
+        urbanistLight,
+        urbanistLightItalic,
+        urbanistMedium,
+        urbanistMediumItalic,
+        urbanistRegular,
+        urbanistSemiBold,
+        urbanistSemiBoldItalic,
+        urbanistThin,
+        urbanistThinItalic
       ];
 }
 
@@ -75,21 +108,35 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Image.png
-  AssetGenImage get image => const AssetGenImage('assets/images/Image.png');
+  /// File path: assets/images/Frame.png
+  AssetGenImage get frame => const AssetGenImage('assets/images/Frame.png');
 
-  /// File path: assets/images/Image1.png
-  AssetGenImage get image1 => const AssetGenImage('assets/images/Image1.png');
+  /// File path: assets/images/Frame1.png
+  AssetGenImage get frame1 => const AssetGenImage('assets/images/Frame1.png');
 
-  /// File path: assets/images/Image2.png
-  AssetGenImage get image2 => const AssetGenImage('assets/images/Image2.png');
+  /// File path: assets/images/Frame2.png
+  AssetGenImage get frame2 => const AssetGenImage('assets/images/Frame2.png');
+
+  /// File path: assets/images/Frame3.png
+  AssetGenImage get frame3 => const AssetGenImage('assets/images/Frame3.png');
 
   /// File path: assets/images/Logo-Name.png
   AssetGenImage get logoName =>
       const AssetGenImage('assets/images/Logo-Name.png');
 
+  /// File path: assets/images/apple.png
+  AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
+
+  /// File path: assets/images/facebook.png
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/images/facebook.png');
+
+  /// File path: assets/images/google.png
+  AssetGenImage get google => const AssetGenImage('assets/images/google.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [image, image1, image2, logoName];
+  List<AssetGenImage> get values =>
+      [frame, frame1, frame2, frame3, logoName, apple, facebook, google];
 }
 
 class Assets {
