@@ -118,8 +118,8 @@ class AppColors {
         warning: const Color(0xffFACC15),
         error: const Color(0xffF75555),
         disable: const Color(0xffD8D8D8),
-        disableButton: const Color(0xff212121),
-        greyscale900: const Color(0xff335EF7),
+        disableButton: const Color(0xff4360C9),
+        greyscale900: const Color(0xff212121),
         greyscale800: const Color(0xff424242),
         greyscale700: const Color(0xff616161),
         greyscale600: const Color(0xff757575),
@@ -142,10 +142,10 @@ class AppColors {
         transparentYellow: const Color(0xffFACC15).withOpacity(.08),
         transparentCyan: const Color(0xff335EF7).withOpacity(.08),
         otherWhite: const Color(0xffFFFFFF),
-        gradientBlue: LinearGradient(
+        gradientBlue: const LinearGradient(
           colors: [
-            Color(0xff335EF7),
             Color(0xff5F82FF),
+            Color(0xff335EF7),
           ],
         ),
       );

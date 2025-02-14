@@ -25,23 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "greeting": MessageLookupByLibrary.simpleMessage("Hello"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
-        "onboarding_1_description": MessageLookupByLibrary.simpleMessage(
-            "Explore thousands of job opportunities that match your skills and interests. Let us help you connect with top companies and land your dream job!"),
-        "onboarding_1_title":
-            MessageLookupByLibrary.simpleMessage("The best app for"),
-        "onboarding_1_title_2":
-            MessageLookupByLibrary.simpleMessage("Find Your Dream Job"),
-        "onboarding_2_description": MessageLookupByLibrary.simpleMessage(
-            "Your future starts with the right career choice. Take control of your journey today and unlock new opportunities for success!"),
-        "onboarding_2_title":
-            MessageLookupByLibrary.simpleMessage("Better future is"),
-        "onboarding_2_title_2":
-            MessageLookupByLibrary.simpleMessage("starting from you"),
-        "onboarding_3_description": MessageLookupByLibrary.simpleMessage(
-            "No more ignored applications! We ensure your resume reaches the right employers, increasing your chances of getting hired."),
+        "onboarding_1_title": MessageLookupByLibrary.simpleMessage(
+            "We provide the best learning courses & great mentors!"),
+        "onboarding_2_title": MessageLookupByLibrary.simpleMessage(
+            "Learn anytime and anywhere easily and conveniently"),
         "onboarding_3_title": MessageLookupByLibrary.simpleMessage(
-            "Application surely viewed by"),
-        "onboarding_3_title_2":
-            MessageLookupByLibrary.simpleMessage("each company")
+            "Let\'s improve your skills together with Elera right now!")
       };
 }

@@ -1,15 +1,9 @@
 {
     "@@locale": "en",
     "greeting": "Hello",
-    "onboarding_1_title": "The best app for",
-    "onboarding_1_title_2": "Find Your Dream Job",
-    "onboarding_1_description": "Explore thousands of job opportunities that match your skills and interests. Let us help you connect with top companies and land your dream job!",
-    "onboarding_2_title": "Better future is",
-    "onboarding_2_title_2": "starting from you",
-    "onboarding_2_description": "Your future starts with the right career choice. Take control of your journey today and unlock new opportunities for success!",
-    "onboarding_3_title": "Application surely viewed by",
-    "onboarding_3_title_2": "each company",
-    "onboarding_3_description": "No more ignored applications! We ensure your resume reaches the right employers, increasing your chances of getting hired.",
+    "onboarding_1_title": "We provide the best learning courses & great mentors!",
+    "onboarding_2_title": "Learn anytime and anywhere easily and conveniently",
+    "onboarding_3_title": "Let's improve your skills together with Elera right now!",
     "get_started": "Get Started",
     "next": "Next"
 }

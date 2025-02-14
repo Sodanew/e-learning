@@ -19,8 +19,9 @@ class DotWidget extends StatelessWidget {
           height: 12,
           margin: const EdgeInsets.only(right: 10),
           decoration: BoxDecoration(
-              color: i == index ? AppColors.current.primary500 : AppColors.current.greyscale300,
-              borderRadius: BorderRadius.circular(10)),
+            color: i == index ? AppColors.current.primary500 : AppColors.current.greyscale300,
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       ).toList(),
     );

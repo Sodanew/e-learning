@@ -60,91 +60,31 @@ class S {
     );
   }
 
-  /// `The best app for`
+  /// `We provide the best learning courses & great mentors!`
   String get onboarding_1_title {
     return Intl.message(
-      'The best app for',
+      'We provide the best learning courses & great mentors!',
       name: 'onboarding_1_title',
       desc: '',
       args: [],
     );
   }
 
-  /// `Find Your Dream Job`
-  String get onboarding_1_title_2 {
-    return Intl.message(
-      'Find Your Dream Job',
-      name: 'onboarding_1_title_2',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Explore thousands of job opportunities that match your skills and interests. Let us help you connect with top companies and land your dream job!`
-  String get onboarding_1_description {
-    return Intl.message(
-      'Explore thousands of job opportunities that match your skills and interests. Let us help you connect with top companies and land your dream job!',
-      name: 'onboarding_1_description',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Better future is`
+  /// `Learn anytime and anywhere easily and conveniently`
   String get onboarding_2_title {
     return Intl.message(
-      'Better future is',
+      'Learn anytime and anywhere easily and conveniently',
       name: 'onboarding_2_title',
       desc: '',
       args: [],
     );
   }
 
-  /// `starting from you`
-  String get onboarding_2_title_2 {
-    return Intl.message(
-      'starting from you',
-      name: 'onboarding_2_title_2',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your future starts with the right career choice. Take control of your journey today and unlock new opportunities for success!`
-  String get onboarding_2_description {
-    return Intl.message(
-      'Your future starts with the right career choice. Take control of your journey today and unlock new opportunities for success!',
-      name: 'onboarding_2_description',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Application surely viewed by`
+  /// `Let's improve your skills together with Elera right now!`
   String get onboarding_3_title {
     return Intl.message(
-      'Application surely viewed by',
+      'Let\'s improve your skills together with Elera right now!',
       name: 'onboarding_3_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `each company`
-  String get onboarding_3_title_2 {
-    return Intl.message(
-      'each company',
-      name: 'onboarding_3_title_2',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No more ignored applications! We ensure your resume reaches the right employers, increasing your chances of getting hired.`
-  String get onboarding_3_description {
-    return Intl.message(
-      'No more ignored applications! We ensure your resume reaches the right employers, increasing your chances of getting hired.',
-      name: 'onboarding_3_description',
       desc: '',
       args: [],
     );

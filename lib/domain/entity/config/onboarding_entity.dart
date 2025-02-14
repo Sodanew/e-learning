@@ -1,7 +1,9 @@
 class OnboardingEntity {
   final String path;
-  final List<String> title;
-  final String content;
+  final String title;
 
-  const OnboardingEntity({required this.path, required this.title, required this.content});
+  const OnboardingEntity({
+    required this.path,
+    required this.title,
+  });
 }
