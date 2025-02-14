@@ -57,14 +57,14 @@ class CommonButton extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: _textStyle(),
+        style: AppTextStyles.bodyLargeBold.copyWith(color: _getTitleColor()),
       ),
     );
   }
 
   Color _backgroundColor() {
-    if (!enable) return AppColors.current.grayscale20;
-    return backgroundColor ?? AppColors.current.primary;
+    if (!enable) return AppColors.current.disable;
+    return backgroundColor ?? AppColors.current.primary500;
   }
 
   WidgetStateProperty<EdgeInsetsGeometry?>? _padding() {
@@ -76,16 +76,8 @@ class CommonButton extends StatelessWidget {
     return WidgetStateProperty.all(val);
   }
 
-  TextStyle _textStyle() {
-    return switch (size) {
-      CommonButtonSize.small => AppTextStyles.bodySmallSemiBold.copyWith(color: _getTitleColor()),
-      CommonButtonSize.medium => AppTextStyles.bodyMediumSemiBold.copyWith(color: _getTitleColor()),
-      CommonButtonSize.large => AppTextStyles.bodyLargeSemiBold.copyWith(color: _getTitleColor()),
-    };
-  }
-
   Color _getTitleColor() {
-    if (enable) return AppColors.current.grayscale10;
-    return AppColors.current.grayscale60;
+    if (enable) return AppColors.current.otherWhite;
+    return AppColors.current.primary500;
   }
 }

@@ -44,6 +44,8 @@ class AppColors {
   final Color transparentRed;
   final Color transparentYellow;
   final Color transparentCyan;
+  
+  final Color otherWhite;
 
   final LinearGradient gradientBlue;
 
@@ -88,6 +90,7 @@ class AppColors {
     required this.transparentRed,
     required this.transparentYellow,
     required this.transparentCyan,
+    required this.otherWhite,
     required this.gradientBlue,
   });
 
@@ -138,6 +141,7 @@ class AppColors {
         transparentRed: const Color(0xffF75555).withOpacity(.08),
         transparentYellow: const Color(0xffFACC15).withOpacity(.08),
         transparentCyan: const Color(0xff335EF7).withOpacity(.08),
+        otherWhite: const Color(0xffFFFFFF),
         gradientBlue: LinearGradient(
           colors: [
             Color(0xff335EF7),

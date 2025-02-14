@@ -44,29 +44,28 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-      backgroundColor: AppColors.current.primary,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
           physics: const ClampingScrollPhysics(),
           child: Column(
             children: [
-              const Gap(12),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Opacity(
-                  opacity: isLast ? 0 : 1,
-                  child: TextButton(
-                    onPressed: () {
-                      if (isLast) return;
-                    },
-                    child: Text(
-                      'Skip',
-                      style: AppTextStyles.bodyMediumSemiBold.copyWith(color: AppColors.current.grayscale10),
-                    ),
-                  ),
-                ),
-              ),
+              // const Gap(12),
+              // Align(
+              //   alignment: Alignment.centerRight,
+              //   child: Opacity(
+              //     opacity: isLast ? 0 : 1,
+              //     child: TextButton(
+              //       onPressed: () {
+              //         if (isLast) return;
+              //       },
+              //       child: Text(
+              //         'Skip',
+              //         style: AppTextStyles.bodyMediumSemiBold.copyWith(color: AppColors.current.grayscale10),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               AspectRatio(
                 aspectRatio: .97,
                 child: AnimatedSwitcher(
@@ -93,21 +92,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
-                          style: AppTextStyles.headingH4Bold,
+                          style: AppTextStyles.h2Bold,
                           children: [
                             TextSpan(text: items[index].title.first),
-                            TextSpan(text: " ${items[index].title.last}", style: TextStyle(color: AppColors.current.primary)),
                           ],
                         ),
-                      ),
-                    ),
-                    const Gap(8),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontal, vertical: 8),
-                      child: Text(
-                        items[index].content,
-                        textAlign: TextAlign.center,
-                        style: AppTextStyles.bodyMediumSemiBold.copyWith(height: 22 / 14),
                       ),
                     ),
                     const Gap(Dimens.paddingHorizontalLarge),

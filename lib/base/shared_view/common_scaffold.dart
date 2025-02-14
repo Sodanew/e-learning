@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/base/extension/context_extension.dart';
 
+import '../constants/ui/app_colors.dart';
+
 class CommonScaffold extends StatelessWidget {
   const CommonScaffold({
     required this.body,
@@ -38,7 +40,7 @@ class CommonScaffold extends StatelessWidget {
 
   Widget _buildScaffold() {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor ?? AppColors.current.otherWhite,
       body: body,
       appBar: appBar,
       drawer: drawer,
