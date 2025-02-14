@@ -20,44 +20,58 @@ class CommonButton extends StatelessWidget {
   final bool enable;
   final Color? backgroundColor;
 
-  factory CommonButton.small({
-    required String title,
-    bool enable = true,
-    required VoidCallback onPressed,
-  }) {
-    return CommonButton(
-      title: title,
-      size: CommonButtonSize.small,
-      enable: enable,
-      onPressed: onPressed,
-    );
-  }
-
-  factory CommonButton.large({
-    required String title,
-    bool enable = true,
-    required VoidCallback onPressed,
-  }) {
-    return CommonButton(
-      title: title,
-      size: CommonButtonSize.large,
-      enable: enable,
-      onPressed: onPressed,
-    );
-  }
+  // factory CommonButton.small({
+  //   required String title,
+  //   bool enable = true,
+  //   required VoidCallback onPressed,
+  // }) {
+  //   return CommonButton(
+  //     title: title,
+  //     size: CommonButtonSize.small,
+  //     enable: enable,
+  //     onPressed: onPressed,
+  //   );
+  // }
+  //
+  // factory CommonButton.large({
+  //   required String title,
+  //   bool enable = true,
+  //   required VoidCallback onPressed,
+  // }) {
+  //   return CommonButton(
+  //     title: title,
+  //     size: CommonButtonSize.large,
+  //     enable: enable,
+  //     onPressed: onPressed,
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(_backgroundColor()),
-        padding: _padding(),
-        shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-      ),
-      child: Text(
-        title,
-        style: AppTextStyles.bodyLargeBold.copyWith(color: _getTitleColor()),
+    return DecoratedBox(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), boxShadow: [
+        BoxShadow(
+          offset: const Offset(4, 8),
+          blurRadius: 24,
+          color: AppColors.current.primary500.withOpacity(.25),
+        ),
+      ]),
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          backgroundColor: _backgroundColor(),
+          padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 16),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+        ),
+        // style: ButtonStyle(
+        //   backgroundColor: WidgetStateProperty.all(_backgroundColor()),
+        //   padding: WidgetStateProperty.all(const EdgeInsets.symmetric(vertical: 18, horizontal: 16)),
+        //   shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+        // ),
+        child: Text(
+          title,
+          style: AppTextStyles.bodyLargeBold.copyWith(color: _getTitleColor()),
+        ),
       ),
     );
   }
@@ -65,15 +79,6 @@ class CommonButton extends StatelessWidget {
   Color _backgroundColor() {
     if (!enable) return AppColors.current.disable;
     return backgroundColor ?? AppColors.current.primary500;
-  }
-
-  WidgetStateProperty<EdgeInsetsGeometry?>? _padding() {
-    final val = switch (size) {
-      CommonButtonSize.small => const EdgeInsets.symmetric(vertical: 4, horizontal: 32),
-      CommonButtonSize.medium => const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-      CommonButtonSize.large => const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-    };
-    return WidgetStateProperty.all(val);
   }
 
   Color _getTitleColor() {

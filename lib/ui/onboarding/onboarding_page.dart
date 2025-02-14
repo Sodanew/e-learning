@@ -55,7 +55,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return CommonScaffold(
       bottomNavigationBar: CommonBottomNavigatorBarBackground(
         visibleBorder: false,
-        child: CommonButton.large(
+        child: CommonButton(
           title: isLast ? S.current.get_started : S.current.next,
           onPressed: () {
             if(isLast) {
@@ -70,6 +70,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           children: [
             Expanded(
               child: PageView(
+                physics: const ClampingScrollPhysics(),
                 controller: _pageController,
                 onPageChanged: (i) {
                   setState(() {
