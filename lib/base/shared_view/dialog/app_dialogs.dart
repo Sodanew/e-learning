@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_colors.dart';
+import 'package:flutter_bloc_template/base/shared_view/dialog/common_dialog.dart';
+
+enum PopupType {
+  notify,
+  normal;
+}
 
 abstract final class AppDialogs {
   const AppDialogs._();
@@ -103,27 +109,30 @@ abstract final class AppDialogs {
   static Future showPopup(
     BuildContext context, {
     bool barrierDismissible = true,
-    required WidgetBuilder builder,
+    WidgetBuilder? builder,
+    Widget? child,
     Curve curve = Curves.linear,
     Duration? duration,
     Alignment alignment = Alignment.center,
     Axis? axis,
     Color? barrierColor,
+    PopupType popupType = PopupType.normal,
   }) async {
     return showGeneralDialog(
       context: context,
       pageBuilder: (BuildContext buildContext, Animation<double> animation, Animation<double> secondaryAnimation) {
-        final Widget pageChild = Builder(builder: builder);
+        final Widget? pageChild = builder != null ? Builder(builder: builder) : child;
         return Builder(
-            builder: (BuildContext context) => Dialog(
-                  insetPadding: const EdgeInsets.all(30),
-                  backgroundColor: AppColors.current.otherWhite,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: pageChild,
-                  ),
-                ));
+          builder: (BuildContext context) => Dialog(
+            insetPadding: const EdgeInsets.all(44),
+            backgroundColor: AppColors.current.otherWhite,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+              child: pageChild,
+            ),
+          ),
+        );
       },
       barrierDismissible: barrierDismissible,
       barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
