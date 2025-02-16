@@ -1,8 +1,8 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_colors.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_base_state.dart';
+import 'package:flutter_bloc_template/base/shared_view/dialog/app_dialogs.dart';
 import 'package:flutter_bloc_template/navigation/router.gr.dart';
 import 'package:flutter_bloc_template/ui/login/bloc/login_event.dart';
 import 'package:gap/gap.dart';
@@ -73,7 +73,18 @@ class _LoginPageState extends CommonBaseState<LoginPage, LoginBloc> {
             CommonButton(
               enable: true,
               onPressed: () {
-                bloc.add(LoginSubmittedEvent());
+                // bloc.add(LoginSubmittedEvent());
+                AppDialogs.showPopup(
+                  context,
+                  builder: (context) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [],
+                    );
+                  },
+                );
               },
               title: S.current.sign_in,
               fullWidth: true,

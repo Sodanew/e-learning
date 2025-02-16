@@ -75,6 +75,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       // surfaceTintColor: Colors.red,
       // forceMaterialTransparency: true,
       // surfaceTintColor: Colors.transparent,
+      scrolledUnderElevation: 0,
       toolbarHeight: preferredSize.height,
       automaticallyImplyLeading: leadingIcon == LeadingIcon.none ? false : automaticallyImplyLeading,
       flexibleSpace: flexibleSpace,
@@ -95,14 +96,14 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: leadingIcon == LeadingIcon.none
           ? null
           : IconButton(
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        onPressed: onLeadingPressed ?? () => _onPop(context),
-        icon: Container(
-          padding: const EdgeInsets.only(left: 16),
-          child: LeadingIcon.close == leadingIcon ? const Icon(Icons.close) : Assets.icons.arrowLeft.svg(),
-        ),
-      ),
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onPressed: onLeadingPressed ?? () => _onPop(context),
+              icon: Container(
+                padding: const EdgeInsets.only(left: 16),
+                child: LeadingIcon.close == leadingIcon ? const Icon(Icons.close) : Assets.icons.arrowLeft.svg(),
+              ),
+            ),
       centerTitle: centerTitle,
       title: GestureDetector(
         onTap: onTitlePressed,
@@ -110,8 +111,8 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: titleType == AppBarTitle.text
             ? Text(text ?? '', style: titleTextStyle ?? AppTextStyles.h4Bold)
             : titleType == AppBarTitle.logo
-            ? Assets.icons.chevronLeft.svg()
-            : (titleType == AppBarTitle.widget ? text : null),
+                ? Assets.icons.chevronLeft.svg()
+                : (titleType == AppBarTitle.widget ? text : null),
       ),
       actions: actions,
       elevation: elevation,
