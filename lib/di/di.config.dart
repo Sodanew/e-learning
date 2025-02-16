@@ -17,6 +17,7 @@ import '../base/bloc/common_bloc/common_bloc.dart' as _i63;
 import '../base/navigator/app_navigator.dart' as _i414;
 import '../data/data_source/local/app_shared_preferences.dart' as _i906;
 import '../data/data_source/remote/service/auth_service.dart' as _i762;
+import '../data/data_source/remote/service/course_service.dart' as _i417;
 import '../data/network/interceptors/access_token_interceptor.dart' as _i355;
 import '../data/network/interceptors/refresh_token_interceptor.dart' as _i746;
 import '../data/repository_impl/auth_repo_impl.dart' as _i561;
@@ -47,6 +48,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i502.AppRouter>(() => _i502.AppRouter());
     gh.lazySingleton<_i762.AuthService>(
         () => _i762.AuthService(gh<_i361.Dio>()));
+    gh.lazySingleton<_i417.CourseService>(
+        () => _i417.CourseService(gh<_i361.Dio>()));
     gh.lazySingleton<_i355.AccessTokenInterceptor>(
         () => _i355.AccessTokenInterceptor(gh<_i906.AppSharedPreferences>()));
     gh.factory<_i63.CommonBloc>(
