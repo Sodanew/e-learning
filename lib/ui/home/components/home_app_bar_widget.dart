@@ -11,9 +11,9 @@ class HomeAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        // color: Colors.red,
+        // color: AppColors.current.otherWhite,
         height: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
+        padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
         child: IntrinsicHeight(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

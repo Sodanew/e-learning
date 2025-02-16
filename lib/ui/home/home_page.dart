@@ -10,6 +10,7 @@ import 'package:flutter_bloc_template/ui/home/components/home_most_popular_cours
 import 'package:flutter_bloc_template/ui/home/components/home_top_mentors_widget.dart';
 import 'package:gap/gap.dart';
 
+import '../../base/constants/ui/app_colors.dart';
 import '../../base/shared_view/dialog/common_dialog.dart';
 import 'components/home_app_bar_widget.dart';
 
@@ -28,33 +29,48 @@ class _HomePageState extends State<HomePage> {
       appBar: const HomeAppBarWidget(),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Gap(24),
-            CommonTextField(
-              onChanged: (val) {},
-              prefixIconPath: Assets.icons.searchLight.path,
-              hintText: 'Search',
-              suffixIcon: IconButton(
-                onPressed: () {
-                  AppDialogs.showPopup(context,
-                      child: CommonDialog(
-                        icon: Assets.images.shieldPopup.image(width: 185),
-                        title: 'Congratulations!',
-                        message: 'Your account is ready to use. You will be redirected to the Home page in a few seconds..',
-                      ));
-                },
-                icon: const CircleAvatar(),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Gap(24),
+                    CommonTextField(
+                      onChanged: (val) {},
+                      prefixIconPath: Assets.icons.searchLight.path,
+                      hintText: 'Search',
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          AppDialogs.showPopup(context,
+                              child: CommonDialog(
+                                icon: Assets.images.shieldPopup.image(width: 185),
+                                title: 'Congratulations!',
+                                message: 'Your account is ready to use. You will be redirected to the Home page in a few seconds..',
+                              ));
+                        },
+                        icon: const CircleAvatar(),
+                      ),
+                    ),
+                    const Gap(24),
+                    const HomeBannerSlideWidget(),
+                    const Gap(24),
+                    const HomeTopMentorsWidget(),
+                  ],
+                )),
+            Container(
+              color: const Color(0xffF9F9F9),
+              padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Gap(24),
+                  HomeMostPopularCoursesWidget(),
+                ],
               ),
             ),
-            const Gap(24),
-            const HomeBannerSlideWidget(),
-            const Gap(24),
-            const HomeTopMentorsWidget(),
-            const Gap(24),
-            const HomeMostPopularCoursesWidget(),
           ],
         ),
       ),

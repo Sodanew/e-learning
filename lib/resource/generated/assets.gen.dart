@@ -108,6 +108,10 @@ class $AssetsIconsGen {
   SvgGenImage get avatarCircle =>
       const SvgGenImage('assets/icons/Avatar-Circle.svg');
 
+  /// File path: assets/icons/Bookmark-Bold.svg
+  SvgGenImage get bookmarkBold =>
+      const SvgGenImage('assets/icons/Bookmark-Bold.svg');
+
   /// File path: assets/icons/Bookmark-Curved.svg
   SvgGenImage get bookmarkCurved =>
       const SvgGenImage('assets/icons/Bookmark-Curved.svg');
@@ -147,6 +151,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Edit-Square.svg
   SvgGenImage get editSquare =>
       const SvgGenImage('assets/icons/Edit-Square.svg');
+
+  /// File path: assets/icons/Filter-Light.svg
+  SvgGenImage get filterLight =>
+      const SvgGenImage('assets/icons/Filter-Light.svg');
 
   /// File path: assets/icons/Hide.svg
   SvgGenImage get hide => const SvgGenImage('assets/icons/Hide.svg');
@@ -194,6 +202,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Show.svg
   SvgGenImage get show => const SvgGenImage('assets/icons/Show.svg');
 
+  /// File path: assets/icons/Star.svg
+  SvgGenImage get star => const SvgGenImage('assets/icons/Star.svg');
+
   /// File path: assets/icons/Toggle-Disabled.svg
   SvgGenImage get toggleDisabled =>
       const SvgGenImage('assets/icons/Toggle-Disabled.svg');
@@ -226,6 +237,7 @@ class $AssetsIconsGen {
         arrowDownLight2,
         arrowLeft,
         avatarCircle,
+        bookmarkBold,
         bookmarkCurved,
         buyEnable,
         buy,
@@ -237,6 +249,7 @@ class $AssetsIconsGen {
         documentEnable,
         document,
         editSquare,
+        filterLight,
         hide,
         homeEnable,
         home,
@@ -250,6 +263,7 @@ class $AssetsIconsGen {
         radioUnselected,
         searchLight,
         show,
+        star,
         toggleDisabled,
         toggleEnable,
         vector1,
