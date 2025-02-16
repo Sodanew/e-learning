@@ -93,14 +93,34 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/Arrow-Down-Bold-2.svg
+  SvgGenImage get arrowDownBold2 =>
+      const SvgGenImage('assets/icons/Arrow-Down-Bold-2.svg');
+
+  /// File path: assets/icons/Arrow-Down-Light-2.svg
+  SvgGenImage get arrowDownLight2 =>
+      const SvgGenImage('assets/icons/Arrow-Down-Light-2.svg');
+
   /// File path: assets/icons/Arrow-Left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/icons/Arrow-Left.svg');
+
+  /// File path: assets/icons/Avatar-Circle.svg
+  SvgGenImage get avatarCircle =>
+      const SvgGenImage('assets/icons/Avatar-Circle.svg');
+
+  /// File path: assets/icons/Bookmark-Curved.svg
+  SvgGenImage get bookmarkCurved =>
+      const SvgGenImage('assets/icons/Bookmark-Curved.svg');
 
   /// File path: assets/icons/Buy-Enable.svg
   SvgGenImage get buyEnable => const SvgGenImage('assets/icons/Buy-Enable.svg');
 
   /// File path: assets/icons/Buy.svg
   SvgGenImage get buy => const SvgGenImage('assets/icons/Buy.svg');
+
+  /// File path: assets/icons/Calendar-Curved.svg
+  SvgGenImage get calendarCurved =>
+      const SvgGenImage('assets/icons/Calendar-Curved.svg');
 
   /// File path: assets/icons/Chat-Enable.svg
   SvgGenImage get chatEnable =>
@@ -124,6 +144,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Document.svg
   SvgGenImage get document => const SvgGenImage('assets/icons/Document.svg');
 
+  /// File path: assets/icons/Edit-Square.svg
+  SvgGenImage get editSquare =>
+      const SvgGenImage('assets/icons/Edit-Square.svg');
+
   /// File path: assets/icons/Hide.svg
   SvgGenImage get hide => const SvgGenImage('assets/icons/Hide.svg');
 
@@ -137,8 +161,16 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Lock.svg
   SvgGenImage get lock => const SvgGenImage('assets/icons/Lock.svg');
 
+  /// File path: assets/icons/Message-Curved.svg
+  SvgGenImage get messageCurved =>
+      const SvgGenImage('assets/icons/Message-Curved.svg');
+
   /// File path: assets/icons/Message.svg
   SvgGenImage get message => const SvgGenImage('assets/icons/Message.svg');
+
+  /// File path: assets/icons/Notification-Curved.svg
+  SvgGenImage get notificationCurved =>
+      const SvgGenImage('assets/icons/Notification-Curved.svg');
 
   /// File path: assets/icons/Profile-Enable.svg
   SvgGenImage get profileEnable =>
@@ -155,6 +187,10 @@ class $AssetsIconsGen {
   SvgGenImage get radioUnselected =>
       const SvgGenImage('assets/icons/Radio-Unselected.svg');
 
+  /// File path: assets/icons/Search-Light.svg
+  SvgGenImage get searchLight =>
+      const SvgGenImage('assets/icons/Search-Light.svg');
+
   /// File path: assets/icons/Show.svg
   SvgGenImage get show => const SvgGenImage('assets/icons/Show.svg');
 
@@ -166,6 +202,12 @@ class $AssetsIconsGen {
   SvgGenImage get toggleEnable =>
       const SvgGenImage('assets/icons/Toggle-Enable.svg');
 
+  /// File path: assets/icons/Vector-1.svg
+  SvgGenImage get vector1 => const SvgGenImage('assets/icons/Vector-1.svg');
+
+  /// File path: assets/icons/Vector-2.svg
+  SvgGenImage get vector2 => const SvgGenImage('assets/icons/Vector-2.svg');
+
   /// File path: assets/icons/chevron-left.svg
   SvgGenImage get chevronLeft =>
       const SvgGenImage('assets/icons/chevron-left.svg');
@@ -174,31 +216,47 @@ class $AssetsIconsGen {
   SvgGenImage get chevronRight =>
       const SvgGenImage('assets/icons/chevron-right.svg');
 
+  /// File path: assets/icons/fingerprint.svg
+  SvgGenImage get fingerprint =>
+      const SvgGenImage('assets/icons/fingerprint.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
+        arrowDownBold2,
+        arrowDownLight2,
         arrowLeft,
+        avatarCircle,
+        bookmarkCurved,
         buyEnable,
         buy,
+        calendarCurved,
         chatEnable,
         chat,
         checkboxChecked,
         checkboxUnchecked,
         documentEnable,
         document,
+        editSquare,
         hide,
         homeEnable,
         home,
         lock,
+        messageCurved,
         message,
+        notificationCurved,
         profileEnable,
         profile,
         radioSelected,
         radioUnselected,
+        searchLight,
         show,
         toggleDisabled,
         toggleEnable,
+        vector1,
+        vector2,
         chevronLeft,
-        chevronRight
+        chevronRight,
+        fingerprint
       ];
 }
 
@@ -231,9 +289,27 @@ class $AssetsImagesGen {
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
+  /// File path: assets/images/profile_popup.png
+  AssetGenImage get profilePopup =>
+      const AssetGenImage('assets/images/profile_popup.png');
+
+  /// File path: assets/images/shield_popup.png
+  AssetGenImage get shieldPopup =>
+      const AssetGenImage('assets/images/shield_popup.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [frame, frame1, frame2, frame3, logoName, apple, facebook, google];
+  List<AssetGenImage> get values => [
+        frame,
+        frame1,
+        frame2,
+        frame3,
+        logoName,
+        apple,
+        facebook,
+        google,
+        profilePopup,
+        shieldPopup
+      ];
 }
 
 class Assets {

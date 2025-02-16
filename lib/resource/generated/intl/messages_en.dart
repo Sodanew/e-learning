@@ -39,9 +39,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "google": MessageLookupByLibrary.simpleMessage("Google"),
         "greeting": MessageLookupByLibrary.simpleMessage("Hello"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "inbox": MessageLookupByLibrary.simpleMessage("Inbox"),
         "lets_you_in": MessageLookupByLibrary.simpleMessage("Let\'s you in"),
         "login_to_ur_account":
             MessageLookupByLibrary.simpleMessage("Login to your\nAccount"),
+        "my_course": MessageLookupByLibrary.simpleMessage("My Course"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "onboarding_1_title": MessageLookupByLibrary.simpleMessage(
             "We provide the best learning courses & great mentors!"),
@@ -53,10 +56,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "or_continue_with":
             MessageLookupByLibrary.simpleMessage("or continue with"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "sign_in_with_password":
             MessageLookupByLibrary.simpleMessage("Sign in with password"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("Sign up")
+        "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "transcation": MessageLookupByLibrary.simpleMessage("Transcation")
       };
 }

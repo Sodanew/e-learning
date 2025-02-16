@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/base/bloc/app_bloc/app_bloc.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_theme.dart';
 import 'package:flutter_bloc_template/base/helper/log.dart';
-import 'package:flutter_bloc_template/base/use_case/base_use_case.dart';
 import 'package:flutter_bloc_template/config/dependencies.dart' as dependencies;
 import 'package:flutter_bloc_template/config/environment.dart';
 import 'package:flutter_bloc_template/di/di.dart';
@@ -98,6 +97,8 @@ class _MyAppState extends CommonBaseState<_MyApp, AppBloc> {
     routes = [const SplashRoute()];
 
     if (widget.config.isFirstLaunchApp) routes = [const OnboardingRoute()];
+
+    routes = [const MainRoute()];
     return DeepLink(routes);
   }
 }

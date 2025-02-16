@@ -23,5 +23,10 @@
     "remember_me": "Remember me",
     "forgot_the_password": "Forgot the password?",
     "create_ur_account": "Create your\nAccount",
-    "login_to_ur_account": "Login to your\nAccount"
+    "login_to_ur_account": "Login to your\nAccount",
+    "home": "Home",
+    "my_course": "My Course",
+    "inbox": "Inbox",
+    "transcation": "Transcation",
+    "profile": "Profile"
 }
