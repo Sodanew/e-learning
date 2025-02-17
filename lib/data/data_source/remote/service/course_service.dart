@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc_template/data/data_source/remote/dto/course/category_response_dto.dart';
 import 'package:flutter_bloc_template/data/data_source/remote/dto/course/course_response_dto.dart';
 import 'package:flutter_bloc_template/data/data_source/remote/dto/course/lesson_response_dto.dart';
+import 'package:flutter_bloc_template/data/data_source/remote/dto/course/mentor_response_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -27,6 +28,9 @@ abstract class CourseService {
 
   @GET('/courses/popular')
   Future<ApiResponse<List<CourseResponseDto>>> fetchMostPopularCourse();
+
+  @GET('/mentors')
+  Future<ApiResponse<List<MentorResponseDto>>> fetchMentors();
 
   @GET('/courses/{courseId}/lessons')
   Future<ApiResponse<List<LessonResponseDto>>> fetchLessonListFromCourseId(@Path('courseId') String id);

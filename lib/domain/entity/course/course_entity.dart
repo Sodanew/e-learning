@@ -1,0 +1,32 @@
+import 'package:flutter_bloc_template/domain/entity/course/mentor_entity.dart';
+import 'package:flutter_bloc_template/domain/entity/course/tool_entity.dart';
+
+class CourseEntity {
+  final String id;
+  final String title;
+  final String category;
+  final int price;
+  final int originalPrice;
+  final double rating;
+  final int reviewsCount;
+  final int students;
+  final int duration;
+  final bool certificate;
+  final MentorEntity mentor;
+  final List<ToolEntity> tools;
+
+  CourseEntity({
+    required this.id,
+    required this.title,
+    required this.category,
+    required this.price,
+    required this.originalPrice,
+    required this.rating,
+    required this.reviewsCount,
+    required this.students,
+    required this.duration,
+    required this.certificate,
+    required this.mentor,
+    required this.tools,
+  });
+}

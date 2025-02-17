@@ -27,7 +27,10 @@ import '../domain/repo/course_repo.dart' as _i492;
 import '../domain/use_case/auth/login_use_case.dart' as _i924;
 import '../domain/use_case/auth/logout_use_case.dart' as _i92;
 import '../domain/use_case/config/load_app_config_use_case.dart' as _i839;
+import '../domain/use_case/course/fetch_most_popular_course_use_case.dart'
+    as _i280;
 import '../domain/use_case/course/fetch_promote_list_use_case.dart' as _i974;
+import '../domain/use_case/course/fetch_top_mentor_list_use_case.dart' as _i193;
 import '../navigation/app_navigator_impl.dart' as _i285;
 import '../navigation/router.dart' as _i502;
 import '../ui/home/bloc/home_bloc.dart' as _i401;
@@ -48,7 +51,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i92.LogoutUseCase>(() => _i92.LogoutUseCase());
     gh.factory<_i919.LoginBloc>(() => _i919.LoginBloc());
     gh.factory<_i924.LoginUseCase>(() => _i924.LoginUseCase());
-    gh.factory<_i401.HomeBloc>(() => _i401.HomeBloc());
     gh.singleton<_i334.AppBloc>(() => _i334.AppBloc());
     gh.lazySingleton<_i502.AppRouter>(() => _i502.AppRouter());
     gh.lazySingleton<_i762.AuthService>(
@@ -72,6 +74,15 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i396.CourseRepoImpl(gh<_i417.CourseService>()));
     gh.factory<_i974.FetchPromoteListUseCase>(
         () => _i974.FetchPromoteListUseCase(gh<_i492.CourseRepo>()));
+    gh.factory<_i280.FetchMostPopularCourseUseCase>(
+        () => _i280.FetchMostPopularCourseUseCase(gh<_i492.CourseRepo>()));
+    gh.factory<_i193.FetchTopMentorListUseCase>(
+        () => _i193.FetchTopMentorListUseCase(gh<_i492.CourseRepo>()));
+    gh.factory<_i401.HomeBloc>(() => _i401.HomeBloc(
+          gh<_i974.FetchPromoteListUseCase>(),
+          gh<_i280.FetchMostPopularCourseUseCase>(),
+          gh<_i193.FetchTopMentorListUseCase>(),
+        ));
     return this;
   }
 }

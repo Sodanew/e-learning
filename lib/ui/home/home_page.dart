@@ -1,16 +1,22 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/base/constants/ui/dimens.dart';
+import 'package:flutter_bloc_template/base/shared_view/common_base_state.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_scaffold.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_text_field.dart';
 import 'package:flutter_bloc_template/base/shared_view/dialog/app_dialogs.dart';
+import 'package:flutter_bloc_template/domain/entity/course/promote_entity.dart';
 import 'package:flutter_bloc_template/resource/generated/assets.gen.dart';
+import 'package:flutter_bloc_template/ui/home/bloc/home_state.dart';
 import 'package:flutter_bloc_template/ui/home/components/home_banner_slide_widget.dart';
 import 'package:flutter_bloc_template/ui/home/components/home_most_popular_courses_widget.dart';
 import 'package:flutter_bloc_template/ui/home/components/home_top_mentors_widget.dart';
 import 'package:gap/gap.dart';
 
 import '../../base/shared_view/dialog/common_dialog.dart';
+import 'bloc/home_bloc.dart';
+import 'bloc/home_event.dart';
 import 'components/home_app_bar_widget.dart';
 
 @RoutePage()
@@ -21,9 +27,15 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends CommonBaseState<HomePage, HomeBloc> {
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
+    bloc.add(HomeDataRequestedEvent());
+  }
+
+  @override
+  Widget buildPage(BuildContext context) {
     return CommonScaffold(
       appBar: const HomeAppBarWidget(),
       body: SingleChildScrollView(
@@ -54,7 +66,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const Gap(24),
-                    const HomeBannerSlideWidget(),
+                    BlocSelector<HomeBloc, HomeState, List<PromoteEntity>>(
+                      selector: (state) => state.promotes,
+                      builder: (_, promotes) {
+                        return HomeBannerSlideWidget(items: promotes);
+                      },
+                    ),
                     const Gap(24),
                     const HomeTopMentorsWidget(),
                   ],

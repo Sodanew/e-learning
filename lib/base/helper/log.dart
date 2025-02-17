@@ -22,6 +22,7 @@ abstract final class CoreLog {
     String? name,
     DateTime? time,
   }) {
+    print('enableLog--------> $message');
     if (!enableLog) return;
     logger.d("${DateTime.now().toString()}\n$message");
   }

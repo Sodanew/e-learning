@@ -4,3 +4,5 @@ sealed class HomeEvent extends BaseEvent {
   @override
   List<Object?> get props => [];
 }
+
+final class HomeDataRequestedEvent extends HomeEvent {}
