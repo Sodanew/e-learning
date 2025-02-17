@@ -7,12 +7,16 @@ import '../../../base/shared_view/dialog/common_dialog.dart';
 import '../../../resource/generated/assets.gen.dart';
 
 class HomeSearchWidget extends StatelessWidget {
-  const HomeSearchWidget({super.key});
+  const HomeSearchWidget({super.key, required this.onChanged, this.autoFocus = false});
+
+  final ValueChanged<String> onChanged;
+  final bool autoFocus;
 
   @override
   Widget build(BuildContext context) {
     return CommonTextField(
-      onChanged: (val) {},
+      onChanged: onChanged,
+      autoFocus: autoFocus,
       prefixIconPath: Assets.icons.searchLight.path,
       hintText: 'Search',
       suffixIcon: IconButton(

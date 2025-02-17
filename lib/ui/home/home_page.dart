@@ -9,6 +9,7 @@ import 'package:flutter_bloc_template/base/shared_view/dialog/app_dialogs.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/mentor_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/promote_entity.dart';
+import 'package:flutter_bloc_template/navigation/router.gr.dart';
 import 'package:flutter_bloc_template/resource/generated/assets.gen.dart';
 import 'package:flutter_bloc_template/ui/home/bloc/home_state.dart';
 import 'package:flutter_bloc_template/ui/home/components/home_banner_slide_widget.dart';
@@ -53,7 +54,17 @@ class _HomePageState extends CommonBaseState<HomePage, HomeBloc> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Gap(24),
-                    const HomeSearchWidget(),
+                    GestureDetector(
+                      onTap: () {
+                        AutoRouter.of(context).push(const HomeSearchRoute());
+                      },
+                      behavior: HitTestBehavior.opaque,
+                      child: IgnorePointer(
+                          ignoring: true,
+                          child: HomeSearchWidget(
+                            onChanged: (String value) {},
+                          )),
+                    ),
                     const Gap(24),
                     BlocSelector<HomeBloc, HomeState, List<PromoteEntity>>(
                       selector: (state) => state.promotes,
