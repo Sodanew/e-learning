@@ -22,7 +22,7 @@ import 'package:flutter_bloc_template/ui/onboarding/onboarding_page.dart'
 import 'package:flutter_bloc_template/ui/profile/profile_page.dart' as _i9;
 import 'package:flutter_bloc_template/ui/sign_up/sign_up_page.dart' as _i10;
 import 'package:flutter_bloc_template/ui/splash/splash_page.dart' as _i11;
-import 'package:flutter_bloc_template/ui/transaction/transcation_page.dart'
+import 'package:flutter_bloc_template/ui/transaction/transaction_page.dart'
     as _i12;
 
 /// generated route for
@@ -235,20 +235,20 @@ class SplashRoute extends _i13.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i12.TranscationPage]
-class TranscationRoute extends _i13.PageRouteInfo<void> {
-  const TranscationRoute({List<_i13.PageRouteInfo>? children})
+/// [_i12.TransactionPage]
+class TransactionRoute extends _i13.PageRouteInfo<void> {
+  const TransactionRoute({List<_i13.PageRouteInfo>? children})
       : super(
-          TranscationRoute.name,
+          TransactionRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'TranscationRoute';
+  static const String name = 'TransactionRoute';
 
   static _i13.PageInfo page = _i13.PageInfo(
     name,
     builder: (data) {
-      return const _i12.TranscationPage();
+      return const _i12.TransactionPage();
     },
   );
 }

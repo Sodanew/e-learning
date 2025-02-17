@@ -21,7 +21,7 @@ class AppRouter extends RootStackRouter {
             AutoRoute(page: HomeRoute.page, initial: true),
             AutoRoute(page: MyCourseRoute.page),
             AutoRoute(page: InboxRoute.page),
-            AutoRoute(page: TranscationRoute.page),
+            AutoRoute(page: TransactionRoute.page),
             AutoRoute(page: ProfileRoute.page),
           ],
         ),
@@ -35,7 +35,7 @@ class AppRouter extends RootStackRouter {
     const HomeRoute(),
     const MyCourseRoute(),
     const InboxRoute(),
-    const TranscationRoute(),
+    const TransactionRoute(),
     const ProfileRoute(),
   ];
 }

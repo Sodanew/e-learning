@@ -5,19 +5,19 @@ import '../../base/shared_view/common_app_bar.dart';
 import '../../base/shared_view/common_scaffold.dart';
 
 @RoutePage()
-class InboxPage extends StatefulWidget {
-  const InboxPage({super.key});
+class TransactionPage extends StatefulWidget {
+  const TransactionPage({super.key});
 
   @override
-  State<InboxPage> createState() => _InboxPageState();
+  State<TransactionPage> createState() => _TransactionPageState();
 }
 
-class _InboxPageState extends State<InboxPage> {
+class _TransactionPageState extends State<TransactionPage> {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
       appBar: CommonAppBar(
-        text: 'Inbox',
+        text: 'Transaction',
         automaticallyImplyLeading: false,
         leadingWidth: 0,
         leadingIcon: LeadingIcon.none,
