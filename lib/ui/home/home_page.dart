@@ -11,6 +11,7 @@ import 'package:flutter_bloc_template/resource/generated/assets.gen.dart';
 import 'package:flutter_bloc_template/ui/home/bloc/home_state.dart';
 import 'package:flutter_bloc_template/ui/home/components/home_banner_slide_widget.dart';
 import 'package:flutter_bloc_template/ui/home/components/home_most_popular_courses_widget.dart';
+import 'package:flutter_bloc_template/ui/home/components/home_search_widget.dart';
 import 'package:flutter_bloc_template/ui/home/components/home_top_mentors_widget.dart';
 import 'package:gap/gap.dart';
 
@@ -49,22 +50,7 @@ class _HomePageState extends CommonBaseState<HomePage, HomeBloc> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Gap(24),
-                    CommonTextField(
-                      onChanged: (val) {},
-                      prefixIconPath: Assets.icons.searchLight.path,
-                      hintText: 'Search',
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          AppDialogs.showPopup(context,
-                              child: CommonDialog(
-                                icon: Assets.images.shieldPopup.image(width: 185),
-                                title: 'Congratulations!',
-                                message: 'Your account is ready to use. You will be redirected to the Home page in a few seconds..',
-                              ));
-                        },
-                        icon: const CircleAvatar(),
-                      ),
-                    ),
+                    const HomeSearchWidget(),
                     const Gap(24),
                     BlocSelector<HomeBloc, HomeState, List<PromoteEntity>>(
                       selector: (state) => state.promotes,

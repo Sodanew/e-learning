@@ -79,7 +79,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 children: items.map<Widget>((e) => OnboardingPageViewWidget(path: e.path, title: e.title)).toList(),
               ),
             ),
-            DotWidget(index: index),
+            DotWidget(index: index, total: items.length),
             const Gap(kToolbarHeight),
           ],
         ),
