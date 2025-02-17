@@ -31,11 +31,13 @@ abstract class BaseRepository {
     }
   }
 
+  @protected
   Result<E> _handleApiError<E>(ApiResponse response) {
     final message = response.message?.firstOrNull ?? '';
     return Result.failure(AppException(message, type: AppExceptionType.unknown));
   }
 
+  @protected
   Result<E> _handleDioException<E>(DioException e) {
     var message = [e.type.name];
 

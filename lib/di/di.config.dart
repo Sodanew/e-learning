@@ -20,13 +20,17 @@ import '../data/data_source/remote/service/auth_service.dart' as _i762;
 import '../data/data_source/remote/service/course_service.dart' as _i417;
 import '../data/network/interceptors/access_token_interceptor.dart' as _i355;
 import '../data/network/interceptors/refresh_token_interceptor.dart' as _i746;
-import '../data/repo_impl/auth_repo_impl.dart' as _i561;
-import '../domain/repository/auth_repo.dart' as _i741;
+import '../data/repo_impl/auth_repo_impl.dart' as _i183;
+import '../data/repo_impl/course_repo_impl.dart' as _i396;
+import '../domain/repo/auth_repo.dart' as _i623;
+import '../domain/repo/course_repo.dart' as _i492;
 import '../domain/use_case/auth/login_use_case.dart' as _i924;
 import '../domain/use_case/auth/logout_use_case.dart' as _i92;
 import '../domain/use_case/config/load_app_config_use_case.dart' as _i839;
+import '../domain/use_case/course/fetch_promote_list_use_case.dart' as _i974;
 import '../navigation/app_navigator_impl.dart' as _i285;
 import '../navigation/router.dart' as _i502;
+import '../ui/home/bloc/home_bloc.dart' as _i401;
 import '../ui/login/bloc/login_bloc.dart' as _i919;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -44,6 +48,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i92.LogoutUseCase>(() => _i92.LogoutUseCase());
     gh.factory<_i919.LoginBloc>(() => _i919.LoginBloc());
     gh.factory<_i924.LoginUseCase>(() => _i924.LoginUseCase());
+    gh.factory<_i401.HomeBloc>(() => _i401.HomeBloc());
     gh.singleton<_i334.AppBloc>(() => _i334.AppBloc());
     gh.lazySingleton<_i502.AppRouter>(() => _i502.AppRouter());
     gh.lazySingleton<_i762.AuthService>(
@@ -54,8 +59,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i355.AccessTokenInterceptor(gh<_i906.AppSharedPreferences>()));
     gh.factory<_i63.CommonBloc>(
         () => _i63.CommonBloc(gh<_i92.LogoutUseCase>()));
-    gh.lazySingleton<_i741.AuthRepo>(
-        () => _i561.AuthRepoImpl(gh<_i762.AuthService>()));
+    gh.lazySingleton<_i623.AuthRepo>(
+        () => _i183.AuthRepoImpl(gh<_i762.AuthService>()));
     gh.lazySingleton<_i414.AppNavigator>(
         () => _i285.AppNavigatorImpl(gh<_i502.AppRouter>()));
     gh.lazySingleton<_i746.RefreshTokenInterceptor>(
@@ -63,6 +68,10 @@ extension GetItInjectableX on _i174.GetIt {
               gh<_i906.AppSharedPreferences>(),
               gh<_i361.Dio>(),
             ));
+    gh.lazySingleton<_i492.CourseRepo>(
+        () => _i396.CourseRepoImpl(gh<_i417.CourseService>()));
+    gh.factory<_i974.FetchPromoteListUseCase>(
+        () => _i974.FetchPromoteListUseCase(gh<_i492.CourseRepo>()));
     return this;
   }
 }
