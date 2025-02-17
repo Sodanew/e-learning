@@ -4,9 +4,7 @@ import 'package:flutter_bloc_template/data/data_source/remote/dto/course/course_
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../../../../domain/use_case/auth/login_use_case.dart';
 import '../dto/api_response.dart';
-import '../dto/auth/login_response_dto.dart';
 import '../dto/course/promote_response_dto.dart';
 
 part 'course_service.g.dart';

@@ -4,7 +4,6 @@ import 'package:flutter_bloc_template/base/constants/ui/app_colors.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_base_state.dart';
 import 'package:flutter_bloc_template/base/shared_view/dialog/app_dialogs.dart';
 import 'package:flutter_bloc_template/navigation/router.gr.dart';
-import 'package:flutter_bloc_template/ui/login/bloc/login_event.dart';
 import 'package:gap/gap.dart';
 
 import '../../base/constants/ui/app_text_styles.dart';

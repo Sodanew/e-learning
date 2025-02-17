@@ -1,8 +1,6 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/base/shared_view/common_scaffold.dart';
 import 'package:flutter_bloc_template/di/di.dart';
 import 'package:flutter_bloc_template/navigation/router.dart';
 

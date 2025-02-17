@@ -1,9 +1,5 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/base/constants/ui/app_colors.dart';
-import 'package:flutter_bloc_template/base/constants/ui/app_text_styles.dart';
-import 'package:flutter_bloc_template/base/constants/ui/dimens.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_button.dart';
 import 'package:flutter_bloc_template/domain/entity/config/onboarding_entity.dart';
 import 'package:flutter_bloc_template/navigation/router.gr.dart';
@@ -60,7 +56,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         child: CommonButton(
           title: isLast ? S.current.get_started : S.current.next,
           onPressed: () {
-            if(isLast) {
+            if (isLast) {
               AutoRouter.of(context).push(const LetInRoute());
               return;
             }

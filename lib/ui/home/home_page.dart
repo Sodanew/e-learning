@@ -10,7 +10,6 @@ import 'package:flutter_bloc_template/ui/home/components/home_most_popular_cours
 import 'package:flutter_bloc_template/ui/home/components/home_top_mentors_widget.dart';
 import 'package:gap/gap.dart';
 
-import '../../base/constants/ui/app_colors.dart';
 import '../../base/shared_view/dialog/common_dialog.dart';
 import 'components/home_app_bar_widget.dart';
 

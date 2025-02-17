@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_colors.dart';
-import 'package:flutter_bloc_template/base/shared_view/dialog/common_dialog.dart';
 
 enum PopupType {
   notify,

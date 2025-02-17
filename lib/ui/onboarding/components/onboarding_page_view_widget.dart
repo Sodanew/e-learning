@@ -3,7 +3,6 @@ import 'package:gap/gap.dart';
 
 import '../../../base/constants/ui/app_text_styles.dart';
 import '../../../base/constants/ui/dimens.dart';
-import '../../../base/helper/duration_provider.dart';
 import '../../../resource/generated/assets.gen.dart';
 
 class OnboardingPageViewWidget extends StatelessWidget {

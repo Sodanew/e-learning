@@ -20,7 +20,7 @@ import '../data/data_source/remote/service/auth_service.dart' as _i762;
 import '../data/data_source/remote/service/course_service.dart' as _i417;
 import '../data/network/interceptors/access_token_interceptor.dart' as _i355;
 import '../data/network/interceptors/refresh_token_interceptor.dart' as _i746;
-import '../data/repository_impl/auth_repo_impl.dart' as _i561;
+import '../data/repo_impl/auth_repo_impl.dart' as _i561;
 import '../domain/repository/auth_repo.dart' as _i741;
 import '../domain/use_case/auth/login_use_case.dart' as _i924;
 import '../domain/use_case/auth/logout_use_case.dart' as _i92;

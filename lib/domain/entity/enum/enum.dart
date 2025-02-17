@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../resource/generated/assets.gen.dart';
 import '../../../resource/generated/l10n.dart';
