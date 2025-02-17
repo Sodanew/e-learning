@@ -34,6 +34,8 @@ import '../domain/use_case/course/fetch_promote_list_use_case.dart' as _i974;
 import '../domain/use_case/course/fetch_top_mentor_list_use_case.dart' as _i193;
 import '../navigation/app_navigator_impl.dart' as _i285;
 import '../navigation/router.dart' as _i502;
+import '../ui/course/page/course_detail/bloc/course_detail_bloc.dart' as _i942;
+import '../ui/course/page/course_list/bloc/course_list_bloc.dart' as _i792;
 import '../ui/home/bloc/home_bloc.dart' as _i401;
 import '../ui/home/page/home_search/bloc/home_search_bloc.dart' as _i702;
 import '../ui/login/bloc/login_bloc.dart' as _i919;
@@ -53,6 +55,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i919.LoginBloc>(() => _i919.LoginBloc());
     gh.factory<_i839.LoadAppConfigUseCase>(() => _i839.LoadAppConfigUseCase());
     gh.factory<_i92.LogoutUseCase>(() => _i92.LogoutUseCase());
+    gh.factory<_i792.CourseListBloc>(() => _i792.CourseListBloc());
+    gh.factory<_i942.CourseDetailBloc>(() => _i942.CourseDetailBloc());
     gh.singleton<_i334.AppBloc>(() => _i334.AppBloc());
     gh.lazySingleton<_i502.AppRouter>(() => _i502.AppRouter());
     gh.lazySingleton<_i417.CourseService>(
