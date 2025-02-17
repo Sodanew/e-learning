@@ -6,6 +6,8 @@ import 'package:flutter_bloc_template/base/shared_view/common_base_state.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_scaffold.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_text_field.dart';
 import 'package:flutter_bloc_template/base/shared_view/dialog/app_dialogs.dart';
+import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
+import 'package:flutter_bloc_template/domain/entity/course/mentor_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/promote_entity.dart';
 import 'package:flutter_bloc_template/resource/generated/assets.gen.dart';
 import 'package:flutter_bloc_template/ui/home/bloc/home_state.dart';
@@ -16,6 +18,7 @@ import 'package:flutter_bloc_template/ui/home/components/home_top_mentors_widget
 import 'package:gap/gap.dart';
 
 import '../../base/shared_view/dialog/common_dialog.dart';
+import '../../domain/entity/course/category_entity.dart';
 import 'bloc/home_bloc.dart';
 import 'bloc/home_event.dart';
 import 'components/home_app_bar_widget.dart';
@@ -59,19 +62,28 @@ class _HomePageState extends CommonBaseState<HomePage, HomeBloc> {
                       },
                     ),
                     const Gap(24),
-                    const HomeTopMentorsWidget(),
+                    BlocSelector<HomeBloc, HomeState, List<MentorEntity>>(
+                      selector: (state) => state.mentors,
+                      builder: (_, mentors) {
+                        return HomeTopMentorsWidget(items: mentors);
+                      },
+                    ),
                   ],
                 )),
-            Container(
-              color: const Color(0xffF9F9F9),
-              padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Gap(24),
-                  HomeMostPopularCoursesWidget(),
-                ],
-              ),
+            const Gap(24),
+            BlocBuilder<HomeBloc, HomeState>(
+              buildWhen: (prev, curr) =>
+                  (prev.courses != curr.courses) || (prev.categories != curr.categories) || (prev.categoryId != curr.categoryId),
+              builder: (_, state) {
+                return HomeMostPopularCoursesWidget(
+                  courses: state.courses,
+                  categories: state.categories,
+                  categoryId: state.categoryId,
+                  onCategoryChanged: (CategoryEntity value) {
+                    bloc.add(HomeCategoryChangedEvent(value.id));
+                  },
+                );
+              },
             ),
           ],
         ),

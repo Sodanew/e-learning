@@ -6,3 +6,13 @@ sealed class HomeEvent extends BaseEvent {
 }
 
 final class HomeDataRequestedEvent extends HomeEvent {}
+
+final class HomeCategoryChangedEvent extends HomeEvent {
+  final String id;
+
+  HomeCategoryChangedEvent(this.id);
+
+  @override
+  List<Object?> get props => [id];
+}
+

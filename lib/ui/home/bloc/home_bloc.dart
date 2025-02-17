@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/base/bloc/base_bloc/base_bloc.dart';
+import 'package:flutter_bloc_template/domain/entity/course/category_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/mentor_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/promote_entity.dart';
+import 'package:flutter_bloc_template/domain/use_case/course/fetch_category_list_use_case.dart';
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_most_popular_course_use_case.dart';
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_promote_list_use_case.dart';
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_top_mentor_list_use_case.dart';
@@ -16,13 +20,16 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
     this._fetchPromoteListUseCase,
     this._fetchMostPopularCourseUseCase,
     this._fetchTopMentorListUseCase,
-  ) : super(HomeState()) {
+    this._fetchCategoryListUseCase,
+  ) : super(HomeState(categoryId: 'all')) {
     on<HomeDataRequestedEvent>(_onHomeDataRequestedEvent);
+    on<HomeCategoryChangedEvent>(_onHomeCategoryChangedEvent);
   }
 
   final FetchPromoteListUseCase _fetchPromoteListUseCase;
   final FetchMostPopularCourseUseCase _fetchMostPopularCourseUseCase;
   final FetchTopMentorListUseCase _fetchTopMentorListUseCase;
+  final FetchCategoryListUseCase _fetchCategoryListUseCase;
 
   Future<void> _onHomeDataRequestedEvent(HomeDataRequestedEvent event, Emitter<HomeState> emit) async {
     return runAction(
@@ -30,6 +37,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
         final apiCalls = [
           _fetchPromoteListUseCase.invoke(null),
           _fetchTopMentorListUseCase.invoke(null),
+          _fetchCategoryListUseCase.invoke(null),
           _fetchMostPopularCourseUseCase.invoke(null),
         ];
         final result = await Future.wait(apiCalls);
@@ -37,6 +45,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
         final emitters = [
           (data) => emit(state.copyWith(promotes: data as List<PromoteEntity>)),
           (data) => emit(state.copyWith(mentors: data as List<MentorEntity>)),
+          (data) => emit(state.copyWith(categories: data as List<CategoryEntity>)),
           (data) => emit(state.copyWith(courses: data as List<CourseEntity>)),
         ];
 
@@ -45,5 +54,9 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
         }
       },
     );
+  }
+
+  FutureOr<void> _onHomeCategoryChangedEvent(HomeCategoryChangedEvent event, Emitter<HomeState> emit) {
+    emit(state.copyWith(categoryId: event.id));
   }
 }

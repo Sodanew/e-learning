@@ -27,6 +27,7 @@ import '../domain/repo/course_repo.dart' as _i492;
 import '../domain/use_case/auth/login_use_case.dart' as _i924;
 import '../domain/use_case/auth/logout_use_case.dart' as _i92;
 import '../domain/use_case/config/load_app_config_use_case.dart' as _i839;
+import '../domain/use_case/course/fetch_category_list_use_case.dart' as _i1026;
 import '../domain/use_case/course/fetch_most_popular_course_use_case.dart'
     as _i280;
 import '../domain/use_case/course/fetch_promote_list_use_case.dart' as _i974;
@@ -74,6 +75,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i396.CourseRepoImpl(gh<_i417.CourseService>()));
     gh.factory<_i974.FetchPromoteListUseCase>(
         () => _i974.FetchPromoteListUseCase(gh<_i492.CourseRepo>()));
+    gh.factory<_i1026.FetchCategoryListUseCase>(
+        () => _i1026.FetchCategoryListUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i280.FetchMostPopularCourseUseCase>(
         () => _i280.FetchMostPopularCourseUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i193.FetchTopMentorListUseCase>(
@@ -82,6 +85,7 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i974.FetchPromoteListUseCase>(),
           gh<_i280.FetchMostPopularCourseUseCase>(),
           gh<_i193.FetchTopMentorListUseCase>(),
+          gh<_i1026.FetchCategoryListUseCase>(),
         ));
     return this;
   }
