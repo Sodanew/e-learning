@@ -10,6 +10,7 @@ import 'package:flutter_bloc_template/domain/use_case/course/fetch_category_list
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_most_popular_course_use_case.dart';
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_promote_list_use_case.dart';
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_top_mentor_list_use_case.dart';
+import 'package:flutter_bloc_template/domain/use_case/user/fetch_profile_use_case.dart';
 import 'package:flutter_bloc_template/ui/home/bloc/home_event.dart';
 import 'package:flutter_bloc_template/ui/home/bloc/home_state.dart';
 import 'package:injectable/injectable.dart';
@@ -21,6 +22,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
     this._fetchMostPopularCourseUseCase,
     this._fetchTopMentorListUseCase,
     this._fetchCategoryListUseCase,
+    this._fetchProfileUseCase,
   ) : super(HomeState(categoryId: 'all')) {
     on<HomeDataRequestedEvent>(_onHomeDataRequestedEvent);
     on<HomeCategoryChangedEvent>(_onHomeCategoryChangedEvent);
@@ -30,6 +32,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
   final FetchMostPopularCourseUseCase _fetchMostPopularCourseUseCase;
   final FetchTopMentorListUseCase _fetchTopMentorListUseCase;
   final FetchCategoryListUseCase _fetchCategoryListUseCase;
+  final FetchProfileUseCase _fetchProfileUseCase;
 
   Future<void> _onHomeDataRequestedEvent(HomeDataRequestedEvent event, Emitter<HomeState> emit) async {
     return runAction(
