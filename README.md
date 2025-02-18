@@ -16,7 +16,9 @@ A mobile application built with Flutter for online courses, providing users with
 
 ## Screenshots
 
-empty...
+
+<img src="https://github.com/tungdevpro/e-learning/blob/main/screenshots/IMG_F7886A227CBF-1.jpeg?raw=true" width="300" />
+
 
 
 ## Getting Started
