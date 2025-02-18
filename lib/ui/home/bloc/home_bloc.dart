@@ -53,7 +53,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
         ];
 
         for (int i = 0; i < result.length; i++) {
-          result[i].when(success: emitters[i]);
+          result[i].when(ok: emitters[i]);
         }
       },
     );

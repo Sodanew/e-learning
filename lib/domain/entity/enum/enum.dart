@@ -54,3 +54,17 @@ enum BottomTab {
     };
   }
 }
+
+enum CourseTab {
+  about,
+  lessons,
+  reviews;
+
+  String fromTitle() {
+    return switch (this) {
+      CourseTab.about => 'About',
+      CourseTab.lessons => 'Lessons',
+      CourseTab.reviews => 'Reviews',
+    };
+  }
+}

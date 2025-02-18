@@ -8,9 +8,9 @@ abstract final class CourseMapper {
   static CourseEntity mapToEntity(CourseResponseDto? dto) {
     return CourseEntity(
       id: dto?.id ?? '',
-      title: dto?.title ??'',
-      category: dto?.category ??'',
-      image: dto?.image ??'',
+      title: dto?.title ?? '',
+      category: dto?.category ?? '',
+      image: dto?.image ?? '',
       price: dto?.price ?? 0,
       originalPrice: dto?.originalPrice ?? 0,
       rating: dto?.rating ?? .0,
@@ -20,6 +20,7 @@ abstract final class CourseMapper {
       certificate: dto?.certificate ?? false,
       mentor: MentorMapper.mapToEntity(dto?.mentor),
       tools: dto?.tools?.map(ToolMapper.mapToEntity).toList() ?? [],
+      about: dto?.about ?? '',
     );
   }
 }

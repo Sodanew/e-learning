@@ -102,7 +102,7 @@ class _CourseService implements CourseService {
     )
             .compose(
               _dio.options,
-              '/api/course/${id}',
+              '/course/${id}',
               queryParameters: queryParameters,
               data: _data,
             )

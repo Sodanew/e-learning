@@ -24,14 +24,14 @@ final class Failure<T> extends Result<T> {
 
 mixin SealedResult<T> {
   R? when<R>({
-    R Function(T? data)? success,
-    R Function(Object? error)? error,
+    R Function(T? data)? ok,
+    R Function(Object? error)? failure,
   }) {
     if (this is Ok<T?>) {
-      return success?.call((this as Ok).data);
+      return ok?.call((this as Ok).data);
     }
     if (this is Failure<T>) {
-      return error?.call((this as Failure<T>).error);
+      return failure?.call((this as Failure<T>).error);
     }
     throw AppException('An error occurred', type: AppExceptionType.unknown);
   }

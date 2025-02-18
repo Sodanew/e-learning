@@ -10,6 +10,7 @@ import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/mentor_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/promote_entity.dart';
 import 'package:flutter_bloc_template/domain/repo/course_repo.dart';
+import 'package:flutter_bloc_template/domain/use_case/course/fetch_course_detail_use_case.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: CourseRepo)
@@ -47,6 +48,14 @@ class CourseRepoImpl extends BaseRepository implements CourseRepo {
     return handleApiCall(
       _courseService.fetchCategories(),
       mapper: (resp) => resp?.data?.map(CategoryMapper.mapToEntity).toList() ?? [],
+    );
+  }
+
+  @override
+  Future<Result<CourseEntity>> fetchCourseDetail(CourseDetailRequest req) {
+    return handleApiCall(
+      _courseService.fetchCourseFromId(req.id),
+      mapper: (resp) => CourseMapper.mapToEntity(resp?.data),
     );
   }
 }

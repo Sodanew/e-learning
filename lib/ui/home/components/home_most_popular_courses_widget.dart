@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_text_styles.dart';
 import 'package:flutter_bloc_template/base/constants/ui/dimens.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_image_view.dart';
 import 'package:flutter_bloc_template/domain/entity/course/category_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
+import 'package:flutter_bloc_template/navigation/router.gr.dart';
 import 'package:flutter_bloc_template/resource/generated/assets.gen.dart';
+import 'package:flutter_bloc_template/ui/widgets/course/course_item_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
 
@@ -47,7 +50,7 @@ class HomeMostPopularCoursesWidget extends StatelessWidget {
           margin: const EdgeInsets.only(top: 5),
           color: const Color(0xffF9F9F9),
           padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontal).copyWith(top: 20),
-          child: _items(),
+          child: _items(context),
         ),
       ],
     );
@@ -85,98 +88,17 @@ class HomeMostPopularCoursesWidget extends StatelessWidget {
     );
   }
 
-  Widget _items() {
+  Widget _items(BuildContext context) {
     return Column(
       children: List<Widget>.generate(
         _courseList.length,
         (i) {
           final item = _courseList[i];
-          return Container(
-            padding: const EdgeInsets.all(20),
-            margin: const EdgeInsets.only(bottom: Dimens.paddingVertical),
-            decoration: BoxDecoration(
-              color: AppColors.current.otherWhite,
-              borderRadius: BorderRadius.circular(32),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xff04060F).withOpacity(.05),
-                ),
-              ],
-            ),
-            child: IntrinsicHeight(
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  // Container(
-                  //   width: 120,
-                  //   height: 120,
-                  //   decoration: BoxDecoration(
-                  //     color: AppColors.current.greyscale200,
-                  //     borderRadius: BorderRadius.circular(20),
-                  //   ),
-                  // ),
-                  CommonImageView(
-                    imageUrl: item.image,
-                    width: 120,
-                    height: 120,
-                    radius: 20,
-                  ),
-                  const Gap(Dimens.paddingHorizontal),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(color: AppColors.current.transparentBlue, borderRadius: BorderRadius.circular(6)),
-                              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
-                              child: Text(item.category, style: AppTextStyles.bodyXSmallSemiBold.withPrimaryColor()),
-                            ),
-                            Assets.icons.bookmarkCurved
-                                .svg(width: 24, colorFilter: ColorFilter.mode(AppColors.current.primary500, BlendMode.srcIn))
-                          ],
-                        ),
-                        const Gap(12),
-                        Text(item.title, style: AppTextStyles.h6Bold),
-                        const Gap(12),
-                        RichText(
-                            text: TextSpan(
-                          children: [
-                            TextSpan(text: '\$${item.price}', style: AppTextStyles.h6Bold.withPrimaryColor()),
-                            const WidgetSpan(child: SizedBox(width: 8)),
-                            TextSpan(
-                                text: '\$${item.originalPrice}',
-                                style: AppTextStyles.bodySmallMedium.copyWith(
-                                  color: AppColors.current.greyscale700,
-                                  decoration: TextDecoration.lineThrough,
-                                )),
-                          ],
-                        )),
-                        const Gap(12),
-                        IntrinsicHeight(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Assets.icons.star.svg(width: 16, height: 16),
-                              const Gap(8),
-                              Text('${item.rating}', style: AppTextStyles.bodySmallMedium.copyWith(color: AppColors.current.greyscale700)),
-                              const Gap(8),
-                              VerticalDivider(color: AppColors.current.greyscale700, width: 1, indent: 3, endIndent: 3),
-                              const Gap(8),
-                              Text('${NumberFormat("#,###").format(item.students)} students',
-                                  style: AppTextStyles.bodySmallMedium.copyWith(color: AppColors.current.greyscale700))
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
+          return CourseItemWidget(
+            item: item,
+            onTap: () {
+              AutoRouter.of(context).push(CourseDetailRoute(id: item.id));
+            },
           );
         },
       ).toList(),

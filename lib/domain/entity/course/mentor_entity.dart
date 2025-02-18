@@ -11,4 +11,5 @@ class MentorEntity {
     required this.avatarUrl,
   });
 
+  static MentorEntity defaultValue() => MentorEntity(id: '', name: '', title: '', avatarUrl: '');
 }

@@ -15,6 +15,7 @@ class CourseEntity {
   final bool certificate;
   final MentorEntity mentor;
   final List<ToolEntity> tools;
+  final String about;
 
   CourseEntity({
     required this.id,
@@ -30,5 +31,23 @@ class CourseEntity {
     required this.certificate,
     required this.mentor,
     required this.tools,
+    required this.about,
   });
+
+  static CourseEntity defaultValue() => CourseEntity(
+        id: '',
+        title: '',
+        category: '',
+        image: '',
+        price: 0,
+        originalPrice: 0,
+        rating: 0.0,
+        reviewsCount: 0,
+        students: 0,
+        duration: 0,
+        certificate: false,
+        mentor: MentorEntity.defaultValue(),
+        tools: const [],
+        about: '',
+      );
 }

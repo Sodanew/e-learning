@@ -23,7 +23,7 @@ abstract class CourseService {
   @GET('/categories')
   Future<ApiResponse<List<CategoryResponseDto>>> fetchCategories();
 
-  @GET('/api/course/{id}')
+  @GET('/course/{id}')
   Future<ApiResponse<CourseResponseDto>> fetchCourseFromId(@Path('id') String id);
 
   @GET('/courses/popular')
