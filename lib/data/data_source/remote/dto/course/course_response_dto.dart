@@ -9,6 +9,7 @@ class CourseResponseDto with _$CourseResponseDto {
     String? id,
     String? title,
     String? category,
+    String? image,
     double? rating,
     int? reviewsCount,
     int? price,

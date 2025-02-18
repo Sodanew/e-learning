@@ -10,6 +10,7 @@ abstract final class CourseMapper {
       id: dto?.id ?? '',
       title: dto?.title ??'',
       category: dto?.category ??'',
+      image: dto?.image ??'',
       price: dto?.price ?? 0,
       originalPrice: dto?.originalPrice ?? 0,
       rating: dto?.rating ?? .0,

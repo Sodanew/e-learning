@@ -23,6 +23,7 @@ mixin _$CourseResponseDto {
   String? get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   double? get rating => throw _privateConstructorUsedError;
   int? get reviewsCount => throw _privateConstructorUsedError;
   int? get price => throw _privateConstructorUsedError;
@@ -54,6 +55,7 @@ abstract class $CourseResponseDtoCopyWith<$Res> {
       {String? id,
       String? title,
       String? category,
+      String? image,
       double? rating,
       int? reviewsCount,
       int? price,
@@ -86,6 +88,7 @@ class _$CourseResponseDtoCopyWithImpl<$Res, $Val extends CourseResponseDto>
     Object? id = freezed,
     Object? title = freezed,
     Object? category = freezed,
+    Object? image = freezed,
     Object? rating = freezed,
     Object? reviewsCount = freezed,
     Object? price = freezed,
@@ -109,6 +112,10 @@ class _$CourseResponseDtoCopyWithImpl<$Res, $Val extends CourseResponseDto>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String?,
       rating: freezed == rating
           ? _value.rating
@@ -180,6 +187,7 @@ abstract class _$$CourseResponseDtoImplCopyWith<$Res>
       {String? id,
       String? title,
       String? category,
+      String? image,
       double? rating,
       int? reviewsCount,
       int? price,
@@ -211,6 +219,7 @@ class __$$CourseResponseDtoImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? title = freezed,
     Object? category = freezed,
+    Object? image = freezed,
     Object? rating = freezed,
     Object? reviewsCount = freezed,
     Object? price = freezed,
@@ -234,6 +243,10 @@ class __$$CourseResponseDtoImplCopyWithImpl<$Res>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String?,
       rating: freezed == rating
           ? _value.rating
@@ -286,6 +299,7 @@ class _$CourseResponseDtoImpl implements _CourseResponseDto {
       {this.id,
       this.title,
       this.category,
+      this.image,
       this.rating,
       this.reviewsCount,
       this.price,
@@ -307,6 +321,8 @@ class _$CourseResponseDtoImpl implements _CourseResponseDto {
   final String? title;
   @override
   final String? category;
+  @override
+  final String? image;
   @override
   final double? rating;
   @override
@@ -337,7 +353,7 @@ class _$CourseResponseDtoImpl implements _CourseResponseDto {
 
   @override
   String toString() {
-    return 'CourseResponseDto(id: $id, title: $title, category: $category, rating: $rating, reviewsCount: $reviewsCount, price: $price, originalPrice: $originalPrice, students: $students, duration: $duration, certificate: $certificate, mentor: $mentor, about: $about, tools: $tools)';
+    return 'CourseResponseDto(id: $id, title: $title, category: $category, image: $image, rating: $rating, reviewsCount: $reviewsCount, price: $price, originalPrice: $originalPrice, students: $students, duration: $duration, certificate: $certificate, mentor: $mentor, about: $about, tools: $tools)';
   }
 
   @override
@@ -349,6 +365,7 @@ class _$CourseResponseDtoImpl implements _CourseResponseDto {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.category, category) ||
                 other.category == category) &&
+            (identical(other.image, image) || other.image == image) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.reviewsCount, reviewsCount) ||
                 other.reviewsCount == reviewsCount) &&
@@ -373,6 +390,7 @@ class _$CourseResponseDtoImpl implements _CourseResponseDto {
       id,
       title,
       category,
+      image,
       rating,
       reviewsCount,
       price,
@@ -406,6 +424,7 @@ abstract class _CourseResponseDto implements CourseResponseDto {
       {final String? id,
       final String? title,
       final String? category,
+      final String? image,
       final double? rating,
       final int? reviewsCount,
       final int? price,
@@ -426,6 +445,8 @@ abstract class _CourseResponseDto implements CourseResponseDto {
   String? get title;
   @override
   String? get category;
+  @override
+  String? get image;
   @override
   double? get rating;
   @override

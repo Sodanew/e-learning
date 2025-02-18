@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_text_styles.dart';
 import 'package:flutter_bloc_template/base/constants/ui/dimens.dart';
+import 'package:flutter_bloc_template/base/shared_view/common_image_view.dart';
 import 'package:flutter_bloc_template/domain/entity/course/category_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
 import 'package:flutter_bloc_template/resource/generated/assets.gen.dart';
@@ -106,13 +107,19 @@ class HomeMostPopularCoursesWidget extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
+                  // Container(
+                  //   width: 120,
+                  //   height: 120,
+                  //   decoration: BoxDecoration(
+                  //     color: AppColors.current.greyscale200,
+                  //     borderRadius: BorderRadius.circular(20),
+                  //   ),
+                  // ),
+                  CommonImageView(
+                    imageUrl: item.image,
                     width: 120,
                     height: 120,
-                    decoration: BoxDecoration(
-                      color: AppColors.current.greyscale200,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+                    radius: 20,
                   ),
                   const Gap(Dimens.paddingHorizontal),
                   Expanded(

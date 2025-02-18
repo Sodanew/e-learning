@@ -196,6 +196,10 @@ class $AssetsIconsGen {
   SvgGenImage get moreCircleCurved =>
       const SvgGenImage('assets/icons/More-Circle-Curved.svg');
 
+  /// File path: assets/icons/More-Circle-Light.svg
+  SvgGenImage get moreCircleLight =>
+      const SvgGenImage('assets/icons/More-Circle-Light.svg');
+
   /// File path: assets/icons/Notification-Curved.svg
   SvgGenImage get notificationCurved =>
       const SvgGenImage('assets/icons/Notification-Curved.svg');
@@ -301,6 +305,7 @@ class $AssetsIconsGen {
         messageCurved,
         message,
         moreCircleCurved,
+        moreCircleLight,
         notificationCurved,
         profileCurved,
         profileEnable,

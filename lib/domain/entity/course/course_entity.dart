@@ -5,6 +5,7 @@ class CourseEntity {
   final String id;
   final String title;
   final String category;
+  final String image;
   final int price;
   final int originalPrice;
   final double rating;
@@ -19,6 +20,7 @@ class CourseEntity {
     required this.id,
     required this.title,
     required this.category,
+    required this.image,
     required this.price,
     required this.originalPrice,
     required this.rating,
