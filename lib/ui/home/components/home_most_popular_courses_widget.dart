@@ -43,7 +43,7 @@ class HomeMostPopularCoursesWidget extends StatelessWidget {
           child: _categories(),
         ),
         Container(
-          margin: const EdgeInsets.only(top: Dimens.paddingVerticalLarge),
+          margin: const EdgeInsets.only(top: 5),
           color: const Color(0xffF9F9F9),
           padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontal).copyWith(top: 20),
           child: _items(),

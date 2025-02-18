@@ -104,6 +104,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Arrow-Left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/icons/Arrow-Left.svg');
 
+  /// File path: assets/icons/Arrow-Right-2.svg
+  SvgGenImage get arrowRight2 =>
+      const SvgGenImage('assets/icons/Arrow-Right-2.svg');
+
   /// File path: assets/icons/Avatar-Circle.svg
   SvgGenImage get avatarCircle =>
       const SvgGenImage('assets/icons/Avatar-Circle.svg');
@@ -166,8 +170,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/Home.svg');
 
+  /// File path: assets/icons/Info-Square-Curved.svg
+  SvgGenImage get infoSquareCurved =>
+      const SvgGenImage('assets/icons/Info-Square-Curved.svg');
+
+  /// File path: assets/icons/Lock-Curved.svg
+  SvgGenImage get lockCurved =>
+      const SvgGenImage('assets/icons/Lock-Curved.svg');
+
   /// File path: assets/icons/Lock.svg
   SvgGenImage get lock => const SvgGenImage('assets/icons/Lock.svg');
+
+  /// File path: assets/icons/Logout-Curved.svg
+  SvgGenImage get logoutCurved =>
+      const SvgGenImage('assets/icons/Logout-Curved.svg');
 
   /// File path: assets/icons/Message-Curved.svg
   SvgGenImage get messageCurved =>
@@ -176,9 +192,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Message.svg
   SvgGenImage get message => const SvgGenImage('assets/icons/Message.svg');
 
+  /// File path: assets/icons/More-Circle-Curved.svg
+  SvgGenImage get moreCircleCurved =>
+      const SvgGenImage('assets/icons/More-Circle-Curved.svg');
+
   /// File path: assets/icons/Notification-Curved.svg
   SvgGenImage get notificationCurved =>
       const SvgGenImage('assets/icons/Notification-Curved.svg');
+
+  /// File path: assets/icons/Profile-Curved.svg
+  SvgGenImage get profileCurved =>
+      const SvgGenImage('assets/icons/Profile-Curved.svg');
 
   /// File path: assets/icons/Profile-Enable.svg
   SvgGenImage get profileEnable =>
@@ -199,6 +223,14 @@ class $AssetsIconsGen {
   SvgGenImage get searchLight =>
       const SvgGenImage('assets/icons/Search-Light.svg');
 
+  /// File path: assets/icons/Shield-Done-Curved.svg
+  SvgGenImage get shieldDoneCurved =>
+      const SvgGenImage('assets/icons/Shield-Done-Curved.svg');
+
+  /// File path: assets/icons/Show-Curved.svg
+  SvgGenImage get showCurved =>
+      const SvgGenImage('assets/icons/Show-Curved.svg');
+
   /// File path: assets/icons/Show.svg
   SvgGenImage get show => const SvgGenImage('assets/icons/Show.svg');
 
@@ -213,11 +245,19 @@ class $AssetsIconsGen {
   SvgGenImage get toggleEnable =>
       const SvgGenImage('assets/icons/Toggle-Enable.svg');
 
+  /// File path: assets/icons/Users-Curve.svg
+  SvgGenImage get usersCurve =>
+      const SvgGenImage('assets/icons/Users-Curve.svg');
+
   /// File path: assets/icons/Vector-1.svg
   SvgGenImage get vector1 => const SvgGenImage('assets/icons/Vector-1.svg');
 
   /// File path: assets/icons/Vector-2.svg
   SvgGenImage get vector2 => const SvgGenImage('assets/icons/Vector-2.svg');
+
+  /// File path: assets/icons/Wallet-Curved.svg
+  SvgGenImage get walletCurved =>
+      const SvgGenImage('assets/icons/Wallet-Curved.svg');
 
   /// File path: assets/icons/chevron-left.svg
   SvgGenImage get chevronLeft =>
@@ -236,6 +276,7 @@ class $AssetsIconsGen {
         arrowDownBold2,
         arrowDownLight2,
         arrowLeft,
+        arrowRight2,
         avatarCircle,
         bookmarkBold,
         bookmarkCurved,
@@ -253,21 +294,30 @@ class $AssetsIconsGen {
         hide,
         homeEnable,
         home,
+        infoSquareCurved,
+        lockCurved,
         lock,
+        logoutCurved,
         messageCurved,
         message,
+        moreCircleCurved,
         notificationCurved,
+        profileCurved,
         profileEnable,
         profile,
         radioSelected,
         radioUnselected,
         searchLight,
+        shieldDoneCurved,
+        showCurved,
         show,
         star,
         toggleDisabled,
         toggleEnable,
+        usersCurve,
         vector1,
         vector2,
+        walletCurved,
         chevronLeft,
         chevronRight,
         fingerprint
