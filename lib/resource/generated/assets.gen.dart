@@ -145,6 +145,10 @@ class $AssetsIconsGen {
   SvgGenImage get checkboxUnchecked =>
       const SvgGenImage('assets/icons/Checkbox-Unchecked.svg');
 
+  /// File path: assets/icons/Document-Bold.svg
+  SvgGenImage get documentBold =>
+      const SvgGenImage('assets/icons/Document-Bold.svg');
+
   /// File path: assets/icons/Document-Enable.svg
   SvgGenImage get documentEnable =>
       const SvgGenImage('assets/icons/Document-Enable.svg');
@@ -159,6 +163,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Filter-Light.svg
   SvgGenImage get filterLight =>
       const SvgGenImage('assets/icons/Filter-Light.svg');
+
+  /// File path: assets/icons/Heart-Bold.svg
+  SvgGenImage get heartBold => const SvgGenImage('assets/icons/Heart-Bold.svg');
 
   /// File path: assets/icons/Hide.svg
   SvgGenImage get hide => const SvgGenImage('assets/icons/Hide.svg');
@@ -204,6 +211,9 @@ class $AssetsIconsGen {
   SvgGenImage get notificationCurved =>
       const SvgGenImage('assets/icons/Notification-Curved.svg');
 
+  /// File path: assets/icons/Play-Bold.svg
+  SvgGenImage get playBold => const SvgGenImage('assets/icons/Play-Bold.svg');
+
   /// File path: assets/icons/Profile-Curved.svg
   SvgGenImage get profileCurved =>
       const SvgGenImage('assets/icons/Profile-Curved.svg');
@@ -237,6 +247,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/Show.svg
   SvgGenImage get show => const SvgGenImage('assets/icons/Show.svg');
+
+  /// File path: assets/icons/Star-Bold.svg
+  SvgGenImage get starBold => const SvgGenImage('assets/icons/Star-Bold.svg');
 
   /// File path: assets/icons/Star.svg
   SvgGenImage get star => const SvgGenImage('assets/icons/Star.svg');
@@ -291,10 +304,12 @@ class $AssetsIconsGen {
         chat,
         checkboxChecked,
         checkboxUnchecked,
+        documentBold,
         documentEnable,
         document,
         editSquare,
         filterLight,
+        heartBold,
         hide,
         homeEnable,
         home,
@@ -307,6 +322,7 @@ class $AssetsIconsGen {
         moreCircleCurved,
         moreCircleLight,
         notificationCurved,
+        playBold,
         profileCurved,
         profileEnable,
         profile,
@@ -316,6 +332,7 @@ class $AssetsIconsGen {
         shieldDoneCurved,
         showCurved,
         show,
+        starBold,
         star,
         toggleDisabled,
         toggleEnable,

@@ -44,10 +44,12 @@ class AppColors {
   final Color transparentRed;
   final Color transparentYellow;
   final Color transparentCyan;
-  
+
   final Color otherWhite;
 
   final LinearGradient gradientBlue;
+
+  final Color scaffoldColor;
 
   static late AppColors current;
 
@@ -92,6 +94,7 @@ class AppColors {
     required this.transparentCyan,
     required this.otherWhite,
     required this.gradientBlue,
+    required this.scaffoldColor,
   });
 
   static AppColors of(BuildContext context) {
@@ -148,6 +151,7 @@ class AppColors {
             Color(0xff335EF7),
           ],
         ),
+        scaffoldColor: const Color(0xffF9F9F9),
       );
 }
 

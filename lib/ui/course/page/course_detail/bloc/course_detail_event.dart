@@ -1,4 +1,5 @@
 import 'package:flutter_bloc_template/base/bloc/base_bloc/base_event.dart';
+import 'package:flutter_bloc_template/domain/entity/enum/enum.dart';
 
 sealed class CourseDetailEvent extends BaseEvent {
   @override
@@ -49,4 +50,13 @@ final class ToggleFavoriteCourseEvent extends CourseDetailEvent {
 
   @override
   List<Object?> get props => [courseId];
+}
+
+final class CourseTabChangedEvent extends CourseDetailEvent {
+  final CourseTab tab;
+
+  CourseTabChangedEvent({required this.tab});
+
+  @override
+  List<Object?> get props => [tab];
 }

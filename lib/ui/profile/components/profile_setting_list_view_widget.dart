@@ -21,7 +21,7 @@ class ProfileSettingListViewWidget extends StatelessWidget {
           onTap: () {},
           label: 'Language',
           icon: Assets.icons.moreCircleCurved.svg(),
-          trailling: Row(
+          trailing: Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +36,7 @@ class ProfileSettingListViewWidget extends StatelessWidget {
             onTap: () {},
             label: 'Dark Mode',
             icon: Assets.icons.showCurved.svg(),
-            trailling: Builder(
+            trailing: Builder(
               builder: (_) {
                 bool enable = false;
                 return StatefulBuilder(
@@ -59,12 +59,13 @@ class ProfileSettingListViewWidget extends StatelessWidget {
         _item(
           onTap: () {},
           label: 'Logout',
-          icon: Assets.icons.usersCurve.svg(
+          labelStyle: AppTextStyles.bodyXLargeBold.copyWith(color: AppColors.current.error),
+          icon: Assets.icons.logoutCurved.svg(
               colorFilter: ColorFilter.mode(
             AppColors.current.error,
             BlendMode.srcIn,
           )),
-          trailling: const SizedBox.shrink(),
+          trailing: const SizedBox.shrink(),
         ),
       ],
     );
@@ -74,7 +75,8 @@ class ProfileSettingListViewWidget extends StatelessWidget {
     required VoidCallback? onTap,
     required String label,
     required Widget icon,
-    Widget? trailling,
+    Widget? trailing,
+    TextStyle? labelStyle,
     // bool visibleBorderBottom = true,
   }) {
     return Container(
@@ -87,10 +89,10 @@ class ProfileSettingListViewWidget extends StatelessWidget {
             children: [
               icon,
               const Gap(20),
-              Text(label, style: AppTextStyles.bodyXLargeBold),
+              Text(label, style: labelStyle ?? AppTextStyles.bodyXLargeBold),
             ],
           ),
-          trailling ?? Assets.icons.arrowRight2.svg(width: 20, height: 20),
+          trailing ?? Assets.icons.arrowRight2.svg(width: 20, height: 20),
         ],
       ),
     );
