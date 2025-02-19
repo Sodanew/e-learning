@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_colors.dart';
 import 'package:flutter_bloc_template/base/constants/ui/dimens.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_base_state.dart';
+import 'package:flutter_bloc_template/base/shared_view/common_bottom_navigator_bar_background.dart';
+import 'package:flutter_bloc_template/base/shared_view/common_button.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_image_view.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_scaffold.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
@@ -56,6 +58,7 @@ class _CourseDetailPageState extends CommonBaseState<CourseDetailPage, CourseDet
                       SliverToBoxAdapter(child: _information(state.course)),
                       SliverToBoxAdapter(
                         child: TabBar(
+                            padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
                             tabs: CourseTab.values
                                 .map<Widget>((tab) => Tab(
                                       text: tab.fromTitle(),
@@ -72,6 +75,13 @@ class _CourseDetailPageState extends CommonBaseState<CourseDetailPage, CourseDet
                 ),
                 const SafeArea(child: BackButton()),
               ],
+            ),
+            bottomNavigationBar: CommonBottomNavigatorBarBackground(
+              visibleBorder: false,
+              child: CommonButton(
+                onPressed: () {},
+                title: 'Enroll Course - ${state.course.displayPrice()}',
+              ),
             ),
           );
         },

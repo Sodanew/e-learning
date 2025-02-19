@@ -61,4 +61,9 @@ extension DoubleExtensions on double {
     String currency = NumberFormat.currency(symbol: '', locale: locale).format(this);
     return '${currency.substring(0, currency.length - 1)}$symbol';
   }
+
+  String convertToUSD() {
+    final formatter = NumberFormat.currency(locale: 'en_US', symbol: '\$', decimalDigits: 0);
+    return formatter.format(this);
+  }
 }

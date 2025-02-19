@@ -56,17 +56,17 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i839.LoadAppConfigUseCase>(() => _i839.LoadAppConfigUseCase());
-    gh.factory<_i92.LogoutUseCase>(() => _i92.LogoutUseCase());
-    gh.factory<_i919.LoginBloc>(() => _i919.LoginBloc());
     gh.factory<_i702.HomeSearchBloc>(() => _i702.HomeSearchBloc());
     gh.factory<_i792.CourseListBloc>(() => _i792.CourseListBloc());
+    gh.factory<_i919.LoginBloc>(() => _i919.LoginBloc());
+    gh.factory<_i839.LoadAppConfigUseCase>(() => _i839.LoadAppConfigUseCase());
+    gh.factory<_i92.LogoutUseCase>(() => _i92.LogoutUseCase());
     gh.singleton<_i334.AppBloc>(() => _i334.AppBloc());
     gh.lazySingleton<_i502.AppRouter>(() => _i502.AppRouter());
-    gh.lazySingleton<_i762.AuthService>(
-        () => _i762.AuthService(gh<_i361.Dio>()));
     gh.lazySingleton<_i417.CourseService>(
         () => _i417.CourseService(gh<_i361.Dio>()));
+    gh.lazySingleton<_i762.AuthService>(
+        () => _i762.AuthService(gh<_i361.Dio>()));
     gh.lazySingleton<_i867.UserService>(
         () => _i867.UserService(gh<_i361.Dio>()));
     gh.lazySingleton<_i355.AccessTokenInterceptor>(

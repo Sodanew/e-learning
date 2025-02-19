@@ -49,7 +49,7 @@ enum BottomTab {
       BottomTab.home => S.current.home,
       BottomTab.myCourse => S.current.my_course,
       BottomTab.inbox => S.current.inbox,
-      BottomTab.transcation => S.current.transcation,
+      BottomTab.transcation => S.current.transaction,
       BottomTab.profile => S.current.profile,
     };
   }

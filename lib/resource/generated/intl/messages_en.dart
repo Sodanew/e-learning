@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apple": MessageLookupByLibrary.simpleMessage("Apple"),
+        "collapse": MessageLookupByLibrary.simpleMessage("Collapse"),
         "continue_with": m0,
         "create_ur_account":
             MessageLookupByLibrary.simpleMessage("Create your\nAccount"),
@@ -57,11 +58,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("or continue with"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "read_more": MessageLookupByLibrary.simpleMessage("Read more"),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "sign_in_with_password":
             MessageLookupByLibrary.simpleMessage("Sign in with password"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
-        "transcation": MessageLookupByLibrary.simpleMessage("Transcation")
+        "transaction": MessageLookupByLibrary.simpleMessage("Transaction")
       };
 }

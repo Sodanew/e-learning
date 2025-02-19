@@ -320,11 +320,11 @@ class S {
     );
   }
 
-  /// `Transcation`
-  String get transcation {
+  /// `Transaction`
+  String get transaction {
     return Intl.message(
-      'Transcation',
-      name: 'transcation',
+      'Transaction',
+      name: 'transaction',
       desc: '',
       args: [],
     );
@@ -335,6 +335,26 @@ class S {
     return Intl.message(
       'Profile',
       name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collapse`
+  String get collapse {
+    return Intl.message(
+      'Collapse',
+      name: 'collapse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read more`
+  String get read_more {
+    return Intl.message(
+      'Read more',
+      name: 'read_more',
       desc: '',
       args: [],
     );

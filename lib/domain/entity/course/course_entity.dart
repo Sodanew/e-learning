@@ -1,3 +1,4 @@
+import 'package:flutter_bloc_template/base/extension/num_extension.dart';
 import 'package:flutter_bloc_template/domain/entity/course/mentor_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/tool_entity.dart';
 
@@ -50,4 +51,8 @@ class CourseEntity {
         tools: const [],
         about: '',
       );
+
+  String displayPrice() {
+    return (price.toDouble()).convertToUSD();
+  }
 }

@@ -27,6 +27,8 @@
     "home": "Home",
     "my_course": "My Course",
     "inbox": "Inbox",
-    "transcation": "Transcation",
-    "profile": "Profile"
+    "transaction": "Transaction",
+    "profile": "Profile",
+    "collapse": "Collapse",
+    "read_more": "Read more"
 }
