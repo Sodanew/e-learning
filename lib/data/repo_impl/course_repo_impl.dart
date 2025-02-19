@@ -6,11 +6,13 @@ import 'package:flutter_bloc_template/data/mapper/course/course_mapper.dart';
 import 'package:flutter_bloc_template/data/mapper/course/lesson_mapper.dart';
 import 'package:flutter_bloc_template/data/mapper/course/mentor_mapper.dart';
 import 'package:flutter_bloc_template/data/mapper/course/promote_mapper.dart';
+import 'package:flutter_bloc_template/data/mapper/course/review_mapper.dart';
 import 'package:flutter_bloc_template/domain/entity/course/category_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/lesson_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/mentor_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/promote_entity.dart';
+import 'package:flutter_bloc_template/domain/entity/course/review_entity.dart';
 import 'package:flutter_bloc_template/domain/repo/course_repo.dart';
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_course_detail_use_case.dart';
 import 'package:injectable/injectable.dart';
@@ -66,6 +68,14 @@ class CourseRepoImpl extends BaseRepository implements CourseRepo {
     return handleApiCall(
       _courseService.fetchLessonListFromCourseId(id),
       mapper: (resp) => resp?.data?.map(LessonMapper.mapToEntity).toList() ?? [],
+    );
+  }
+
+  @override
+  Future<Result<List<ReviewEntity>>> fetchReviewListFromCourseId(String id) {
+    return handleApiCall(
+      _courseService.fetchReviewListFromCourseId(id),
+      mapper: (resp) => resp?.data?.map(ReviewMapper.mapToEntity).toList() ?? [],
     );
   }
 }

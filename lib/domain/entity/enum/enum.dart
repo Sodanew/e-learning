@@ -68,3 +68,26 @@ enum CourseTab {
     };
   }
 }
+
+enum RatingFilter {
+  all(0),
+  fiveStars(5),
+  fourStars(4),
+  threeStars(3),
+  twoStars(2),
+  oneStars(1);
+
+  const RatingFilter(this.code);
+  final int code;
+
+  String fromTitle() {
+    return switch(this) {
+      RatingFilter.all => 'All',
+      RatingFilter.fiveStars => '5',
+      RatingFilter.fourStars => '4',
+      RatingFilter.threeStars => '3',
+      RatingFilter.twoStars => '2',
+      RatingFilter.oneStars => '1',
+    };
+  }
+}

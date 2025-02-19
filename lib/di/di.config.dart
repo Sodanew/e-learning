@@ -37,6 +37,8 @@ import '../domain/use_case/course/fetch_lesson_list_from_course_id_use_case.dart
 import '../domain/use_case/course/fetch_most_popular_course_use_case.dart'
     as _i280;
 import '../domain/use_case/course/fetch_promote_list_use_case.dart' as _i974;
+import '../domain/use_case/course/fetch_review_list_from_course_id_use_case.dart'
+    as _i408;
 import '../domain/use_case/course/fetch_top_mentor_list_use_case.dart' as _i193;
 import '../domain/use_case/user/fetch_profile_use_case.dart' as _i79;
 import '../navigation/app_navigator_impl.dart' as _i285;
@@ -104,16 +106,19 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i538.FetchCourseDetailUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i193.FetchTopMentorListUseCase>(
         () => _i193.FetchTopMentorListUseCase(gh<_i492.CourseRepo>()));
+    gh.factory<_i408.FetchReviewListFromCourseIdUseCase>(
+        () => _i408.FetchReviewListFromCourseIdUseCase(gh<_i492.CourseRepo>()));
+    gh.factory<_i942.CourseDetailBloc>(() => _i942.CourseDetailBloc(
+          gh<_i538.FetchCourseDetailUseCase>(),
+          gh<_i430.FetchLessonListFromCourseIdUseCase>(),
+          gh<_i408.FetchReviewListFromCourseIdUseCase>(),
+        ));
     gh.factory<_i401.HomeBloc>(() => _i401.HomeBloc(
           gh<_i974.FetchPromoteListUseCase>(),
           gh<_i280.FetchMostPopularCourseUseCase>(),
           gh<_i193.FetchTopMentorListUseCase>(),
           gh<_i1026.FetchCategoryListUseCase>(),
           gh<_i79.FetchProfileUseCase>(),
-        ));
-    gh.factory<_i942.CourseDetailBloc>(() => _i942.CourseDetailBloc(
-          gh<_i538.FetchCourseDetailUseCase>(),
-          gh<_i430.FetchLessonListFromCourseIdUseCase>(),
         ));
     return this;
   }

@@ -10,6 +10,7 @@ import 'package:flutter_bloc_template/base/shared_view/common_image_view.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_scaffold.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/course/lesson_entity.dart';
+import 'package:flutter_bloc_template/domain/entity/course/review_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/enum/enum.dart';
 import 'package:flutter_bloc_template/ui/course/page/course_detail/bloc/course_detail_bloc.dart';
 import 'package:flutter_bloc_template/ui/course/page/course_detail/bloc/course_detail_event.dart';
@@ -75,7 +76,12 @@ class _CourseDetailPageState extends CommonBaseState<CourseDetailPage, CourseDet
                         return CourseLessonsTabWidget(lessons: lessons, course: state.course);
                       },
                     ),
-                    CourseReviewsTabWidget(),
+                    BlocSelector<CourseDetailBloc, CourseDetailState, List<ReviewEntity>>(
+                      selector: (state) => state.reviews,
+                      builder: (_, reviews) {
+                        return CourseReviewsTabWidget(reviews: reviews, course: state.course);
+                      },
+                    ),
                   ]),
                 ),
                 const SafeArea(child: BackButton()),

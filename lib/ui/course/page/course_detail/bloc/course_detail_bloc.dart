@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/base/bloc/base_bloc/base_bloc.dart';
-import 'package:flutter_bloc_template/base/helper/duration_provider.dart';
 import 'package:flutter_bloc_template/domain/entity/course/course_entity.dart';
 import 'package:flutter_bloc_template/domain/entity/enum/enum.dart';
 import 'package:flutter_bloc_template/domain/use_case/course/fetch_course_detail_use_case.dart';
@@ -11,10 +10,11 @@ import 'package:flutter_bloc_template/ui/course/page/course_detail/bloc/course_d
 import 'package:injectable/injectable.dart';
 
 import '../../../../../domain/use_case/course/fetch_lesson_list_from_course_id_use_case.dart';
+import '../../../../../domain/use_case/course/fetch_review_list_from_course_id_use_case.dart';
 
 @injectable
 final class CourseDetailBloc extends BaseBloc<CourseDetailEvent, CourseDetailState> {
-  CourseDetailBloc(this._fetchCourseDetailUseCase, this._fetchLessonListFromCourseIdUseCase)
+  CourseDetailBloc(this._fetchCourseDetailUseCase, this._fetchLessonListFromCourseIdUseCase, this._fetchReviewListFromCourseIdUseCase)
       : super(CourseDetailState(
           course: CourseEntity.defaultValue(),
           tab: CourseTab.about,
@@ -25,6 +25,7 @@ final class CourseDetailBloc extends BaseBloc<CourseDetailEvent, CourseDetailSta
 
   final FetchCourseDetailUseCase _fetchCourseDetailUseCase;
   final FetchLessonListFromCourseIdUseCase _fetchLessonListFromCourseIdUseCase;
+  final FetchReviewListFromCourseIdUseCase _fetchReviewListFromCourseIdUseCase;
 
   FutureOr<void> _onFetchCourseDetailEvent(FetchCourseDetailEvent event, Emitter<CourseDetailState> emit) {
     return runAction(
@@ -64,5 +65,17 @@ final class CourseDetailBloc extends BaseBloc<CourseDetailEvent, CourseDetailSta
     );
   }
 
-  Future<void> _fetchReview({required Emitter<CourseDetailState> emit}) async {}
+  Future<void> _fetchReview({required Emitter<CourseDetailState> emit}) async {
+    if(state.reviews.isNotEmpty) return;
+    return runAction(
+      onAction: () async {
+        final result = await _fetchReviewListFromCourseIdUseCase.invoke(state.course.id);
+        result.when(
+          ok: (data) {
+            emit(state.copyWith(reviews: data, tab: CourseTab.reviews));
+          },
+        );
+      },
+    );
+  }
 }
