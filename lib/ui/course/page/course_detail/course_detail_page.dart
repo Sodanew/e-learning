@@ -1,8 +1,12 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_colors.dart';
+import 'package:flutter_bloc_template/base/constants/ui/app_text_styles.dart';
 import 'package:flutter_bloc_template/base/constants/ui/dimens.dart';
+import 'package:flutter_bloc_template/base/helper/duration_provider.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_base_state.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_bottom_navigator_bar_background.dart';
 import 'package:flutter_bloc_template/base/shared_view/common_button.dart';
@@ -16,10 +20,13 @@ import 'package:flutter_bloc_template/ui/course/page/course_detail/bloc/course_d
 import 'package:flutter_bloc_template/ui/course/page/course_detail/bloc/course_detail_event.dart';
 import 'package:flutter_bloc_template/ui/course/page/course_detail/bloc/course_detail_state.dart';
 import 'package:flutter_bloc_template/ui/course/page/course_detail/components/course_information_widget.dart';
+import 'package:flutter_bloc_template/ui/course/page/course_detail/components/course_persistent_header_delegate.dart';
 import 'package:flutter_bloc_template/ui/course/page/course_detail/components/tabs/course_about_tab_widget.dart';
 import 'package:flutter_bloc_template/ui/course/page/course_detail/components/tabs/course_lessons_tab_widget.dart';
 import 'package:flutter_bloc_template/ui/course/page/course_detail/components/tabs/course_reviews_tab_widget.dart';
 import 'package:gap/gap.dart';
+
+import '../../../../resource/generated/assets.gen.dart';
 
 @RoutePage()
 class CourseDetailPage extends StatefulWidget {
@@ -32,10 +39,31 @@ class CourseDetailPage extends StatefulWidget {
 }
 
 class _CourseDetailPageState extends CommonBaseState<CourseDetailPage, CourseDetailBloc> {
+  final ScrollController _scrollController = ScrollController();
+
+  final ValueNotifier<bool> isHeaderVisible = ValueNotifier(false);
+
+  static const double _scrollThreshold = 300;
+
   @override
   void initState() {
     super.initState();
     bloc.add(FetchCourseDetailEvent(courseId: widget.id));
+    _scrollController.addListener(_onScroll);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    isHeaderVisible.dispose();
+    super.dispose();
+  }
+
+  void _onScroll() {
+    final shouldShowHeader = _scrollController.position.pixels >= _scrollThreshold;
+    if (isHeaderVisible.value != shouldShowHeader) {
+      isHeaderVisible.value = shouldShowHeader;
+    }
   }
 
   @override
@@ -49,23 +77,45 @@ class _CourseDetailPageState extends CommonBaseState<CourseDetailPage, CourseDet
             body: Stack(
               children: [
                 NestedScrollView(
+                  controller: _scrollController,
                   headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
                     return [
-                      SliverToBoxAdapter(
-                        child: SizedBox(
-                          height: 300,
-                          width: MediaQuery.sizeOf(context).width,
-                          child: CommonImageView(imageUrl: state.course.image),
-                        ),
+                      ValueListenableBuilder<bool>(
+                        valueListenable: isHeaderVisible,
+                        builder: (_, visible, __) {
+                          return SliverAppBar(
+                            expandedHeight: 300,
+                            pinned: true,
+                            scrolledUnderElevation: 0,
+                            backgroundColor: AppColors.current.otherWhite,
+                            title: AnimatedCrossFade(
+                                firstChild:  Text(state.course.title, style: AppTextStyles.h4Bold),
+                                secondChild: const SizedBox.shrink(),
+                                crossFadeState: !visible ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+                                duration: const ShortDuration()),
+                            leading: IconButton(
+                              onPressed: () => AutoRouter.of(context).back(),
+                              icon: AnimatedCrossFade(
+                                  firstChild: _backButton(),
+                                  secondChild: _backButton(ColorFilter.mode(AppColors.current.otherWhite, BlendMode.srcIn)),
+                                  crossFadeState: !visible ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+                                  duration: const ShortDuration()),
+                            ),
+                            flexibleSpace: FlexibleSpaceBar(
+                              background: CommonImageView(imageUrl: state.course.image),
+                            ),
+                          );
+                        },
                       ),
                       SliverToBoxAdapter(child: _information(state.course)),
-                      SliverToBoxAdapter(
-                        child: TabBar(
-                          padding: const EdgeInsets.symmetric(horizontal: Dimens.paddingHorizontalLarge),
-                          tabs: CourseTab.values.map<Widget>((tab) => Tab(text: tab.fromTitle())).toList(),
-                          onTap: (i) => bloc.add(CourseTabChangedEvent(tab: CourseTab.values[i])),
+                      SliverPersistentHeader(
+                        pinned: true,
+                        delegate: CoursePersistentHeaderDelegate(
+                          onTap: (i) {
+                            bloc.add(CourseTabChangedEvent(tab: CourseTab.values[i]));
+                          },
                         ),
-                      ),
+                      )
                     ];
                   },
                   body: TabBarView(children: [
@@ -84,7 +134,7 @@ class _CourseDetailPageState extends CommonBaseState<CourseDetailPage, CourseDet
                     ),
                   ]),
                 ),
-                const SafeArea(child: BackButton()),
+                // const SafeArea(child: BackButton()),
               ],
             ),
             bottomNavigationBar: CommonBottomNavigatorBarBackground(
@@ -98,6 +148,10 @@ class _CourseDetailPageState extends CommonBaseState<CourseDetailPage, CourseDet
         },
       ),
     );
+  }
+
+  Widget _backButton([ColorFilter? colorFilter]) {
+    return Assets.icons.arrowLeft.svg(colorFilter: colorFilter);
   }
 
   Widget _information(CourseEntity item) {
