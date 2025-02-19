@@ -100,14 +100,14 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i1026.FetchCategoryListUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i280.FetchMostPopularCourseUseCase>(
         () => _i280.FetchMostPopularCourseUseCase(gh<_i492.CourseRepo>()));
+    gh.factory<_i408.FetchReviewListFromCourseIdUseCase>(
+        () => _i408.FetchReviewListFromCourseIdUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i430.FetchLessonListFromCourseIdUseCase>(
         () => _i430.FetchLessonListFromCourseIdUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i538.FetchCourseDetailUseCase>(
         () => _i538.FetchCourseDetailUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i193.FetchTopMentorListUseCase>(
         () => _i193.FetchTopMentorListUseCase(gh<_i492.CourseRepo>()));
-    gh.factory<_i408.FetchReviewListFromCourseIdUseCase>(
-        () => _i408.FetchReviewListFromCourseIdUseCase(gh<_i492.CourseRepo>()));
     gh.factory<_i942.CourseDetailBloc>(() => _i942.CourseDetailBloc(
           gh<_i538.FetchCourseDetailUseCase>(),
           gh<_i430.FetchLessonListFromCourseIdUseCase>(),
