@@ -51,6 +51,7 @@ final class CourseDetailBloc extends BaseBloc<CourseDetailEvent, CourseDetailSta
   }
 
   Future<void> _fetchLesson({required Emitter<CourseDetailState> emit}) async {
+    if(state.lessons.isNotEmpty) return;
     return runAction(
       onAction: () async {
         final result = await _fetchLessonListFromCourseIdUseCase.invoke(state.course.id);
