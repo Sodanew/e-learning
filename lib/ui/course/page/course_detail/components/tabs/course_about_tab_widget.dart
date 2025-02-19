@@ -27,7 +27,7 @@ class CourseAboutTabWidget extends StatelessWidget {
         const Gap(Dimens.paddingHorizontalLarge),
         Text('About Course', style: AppTextStyles.h5Bold),
         const Gap(12),
-        CommonExpandableText(content: item.about),
+        CommonExpandableText(content: item.about, limitCharacters: 500),
         const Gap(Dimens.paddingVerticalLarge),
         Text('Tools', style: AppTextStyles.h5Bold),
       ],
