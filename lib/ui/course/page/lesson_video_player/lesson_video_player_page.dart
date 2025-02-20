@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_text_styles.dart';
 import 'package:flutter_bloc_template/base/constants/ui/dimens.dart';
+import 'package:flutter_bloc_template/base/extension/duration_extension.dart';
 import 'package:gap/gap.dart';
 import 'package:video_player/video_player.dart';
 
@@ -97,7 +98,7 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
             ),
           ),
 
-          if (_showOverlay)
+          if (_showOverlay && !_isFullscreen)
             Positioned(
               top: kToolbarHeight + 15,
               left: Dimens.paddingHorizontal,
@@ -144,7 +145,7 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      _formatDuration(_controller.value.position),
+                      _controller.value.position.formatDuration(),
                       style: AppTextStyles.bodySmallSemiBold.withWhiteColor(),
                     ),
                     const Gap(12),
@@ -165,7 +166,7 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
                     ),
                     const Gap(12),
                     Text(
-                      _formatDuration(_controller.value.duration),
+                      _controller.value.duration.formatDuration(),
                       style: AppTextStyles.bodySmallSemiBold.withWhiteColor(),
                     ),
                     const Gap(12),
@@ -184,13 +185,5 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
         ],
       ),
     );
-  }
-
-  // Format thời gian thành "mm:ss"
-  String _formatDuration(Duration duration) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
-    final minutes = twoDigits(duration.inMinutes.remainder(60));
-    final seconds = twoDigits(duration.inSeconds.remainder(60));
-    return "$minutes:$seconds";
   }
 }
