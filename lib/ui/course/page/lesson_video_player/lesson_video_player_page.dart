@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc_template/base/constants/ui/app_text_styles.dart';
@@ -24,6 +27,7 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
   late VideoPlayerController _controller;
   bool _showOverlay = true;
   bool _isFullscreen = false;
+  Timer? _hideControlsTimer;
 
 
   @override
@@ -37,14 +41,26 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
     _controller.addListener(() {
       setState(() {});
     });
+
+    _startHideControlsTimer();
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _hideControlsTimer?.cancel();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     super.dispose();
+  }
+
+  void _startHideControlsTimer() {
+    _hideControlsTimer?.cancel();
+    _hideControlsTimer = Timer(const Duration(seconds: 3), () {
+      setState(() {
+        _showOverlay = false;
+      });
+    });
   }
 
   void _togglePlayPause() {
@@ -73,7 +89,6 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
     });
   }
 
-
   void _toggleOverlay() {
     setState(() {
       _showOverlay = !_showOverlay;
@@ -97,7 +112,6 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
                   : const CircularProgressIndicator(color: Colors.white),
             ),
           ),
-
           if (_showOverlay && !_isFullscreen)
             Positioned(
               top: kToolbarHeight + 15,
@@ -107,13 +121,12 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
                 children: [
                   IconButton(
                     icon: Assets.icons.arrowLeft.svg(colorFilter: ColorFilter.mode(AppColors.current.otherWhite, BlendMode.srcIn)),
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => AutoRouter.of(context).back(),
                   ),
                   const Gap(Dimens.paddingHorizontalLarge)
                 ],
               ),
             ),
-
           if (_showOverlay)
             Center(
               child: GestureDetector(
@@ -133,12 +146,11 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
                 ),
               ),
             ),
-
           if (_showOverlay)
             Positioned(
-              bottom: MediaQuery.sizeOf(context).height / 3,
-              left: 24,
-              right: 24,
+              bottom: _isFullscreen ? 15 : MediaQuery.sizeOf(context).height / 3,
+              left: _isFullscreen ? 100 : 24,
+              right: _isFullscreen ? 100 : 24,
               child: Align(
                 alignment: Alignment.center,
                 child: Row(
@@ -173,10 +185,14 @@ class _LessonVideoPlayerPageState extends State<LessonVideoPlayerPage> {
                     GestureDetector(
                       onTap: () {
                         _isFullscreen ? _exitFullscreen() : _enterFullscreen();
-
                       },
                       behavior: HitTestBehavior.opaque,
-                      child: Assets.icons.fullscreen.svg(),
+                      child: _isFullscreen
+                          ? CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              child: Assets.icons.fullscreen.svg(),
+                            )
+                          : Assets.icons.fullscreen.svg(),
                     ),
                   ],
                 ),
