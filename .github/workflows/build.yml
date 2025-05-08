@@ -10,10 +10,10 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v3.3.0
 
     - name: Set up Flutter
-      uses: subosito/flutter-action@v2
+      uses: subosito/flutter-action@v2.15.0
       with:
         flutter-version: '3.13.0'
 
@@ -31,7 +31,7 @@ jobs:
         flutter build ios --no-codesign
 
     - name: Upload APK and IPA
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
         name: Build Outputs
         path: |
