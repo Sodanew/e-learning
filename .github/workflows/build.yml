@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-14
 
     steps:
     - uses: actions/checkout@v3.3.0
@@ -30,14 +30,14 @@ jobs:
       run: flutter pub run build_runner build --delete-conflicting-outputs
 
     - name: Build APK
-      run: flutter build apk
+      run: flutter build apk --flavor prod --target=lib/main_prod.dart
 
     - name: Build IPA
       run: |
         cd ios
         pod install
         cd ..
-        flutter build ios --no-codesign
+        flutter build ios --no-codesign --flavor prod --target=lib/main_prod.dart
 
     - name: Upload APK and IPA
       uses: actions/upload-artifact@v4.0.0
@@ -46,6 +46,7 @@ jobs:
         path: |
           build/app/outputs/flutter-apk/app-release.apk
           build/ios/iphoneos/Runner.app
+
 
 
 
